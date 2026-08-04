@@ -9,6 +9,19 @@ Full spec lives in [`docs/`](docs/): `Problem-Statement-Mission-Completion-Copil
 `context.md`, `architecture.md`, `datamodel.md`, `design.md`, `edgecases.md`,
 and the build sequence in [`docs/implementation_plan.md`](docs/implementation_plan.md).
 
+## Live deployment
+
+- Frontend: https://instamart-copilot.vercel.app
+- Backend: https://instamart-copilot-api.onrender.com (`/health`, `/copilot`, `/events`, `/metrics/{session_id}`)
+- Render is on a paid (Starter) plan, not free tier — no cold-start / sleep
+  behavior, so the free-tier cold-start pinger in `docs/implementation_plan.md`
+  §5.9 is not needed for this deployment.
+- Mobile Lighthouse (production, `/`): Performance 78, LCP 2.4s, CLS 0,
+  FCP 1.1s. Below the 90 target mainly on total-blocking-time (~800ms); not
+  chased further per the plan's own guidance to fix the largest offenders and
+  not chase a perfect score on a prototype. CLS and FCP are both comfortably
+  within budget.
+
 ## Repo layout
 
 ```
@@ -59,9 +72,10 @@ fully, since the catalog is bundled client-side. This is expected, not a bug.
   in this pass, per the hybrid-image decision in `docs/implementation_plan.md`
   Pre-Flight. Real photography for the ~15 SKUs that actually surface in
   copilot suggestions is a fast-follow, not a blocker.
-- **SQLite event log (`backend/data/events.db`) is ephemeral** on Render's
-  free-tier disk across deploys. Acceptable by design — the metrics drawer is
-  scoped per browser session anyway.
+- **SQLite event log (`backend/data/events.db`) is ephemeral** — Render's
+  local filesystem doesn't persist across deploys/restarts unless a paid
+  persistent disk is explicitly attached (not configured here). Acceptable
+  by design — the metrics drawer is scoped per browser session anyway.
 - **Node.js requirement:** frontend was scaffolded on Next.js 16 / React 19 /
   Tailwind v4 (the current `create-next-app` default), not the Next.js 14
   named in the original architecture doc — functionally equivalent for this
