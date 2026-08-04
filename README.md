@@ -37,6 +37,44 @@ and the build sequence in [`docs/implementation_plan.md`](docs/implementation_pl
   offenders, don't chase perfection on a prototype" guidance — CLS and FCP
   are both comfortably within budget regardless.
 
+## Copilot candidate selection (docs/improve.md)
+
+Candidate selection used to be a static, cart-blind catalog-order
+truncation — for the default persona it always kept the same 4
+never-purchased categories and always cut same-category completions
+entirely, which is why the flagship pasta-dinner demo could never work
+(garlic bread/cheese were structurally unreachable, not just unlikely to
+be picked). `backend/catalog.py`'s `candidate_slice()` is now a cart-aware
+relevance score (complements, tag overlap, time-of-day, category
+guarantees) — see `docs/improve.md` for the full diagnosis and fix design.
+Verified live post-deploy: pasta+sauce correctly infers "tonight's pasta
+dinner" pulling in garlic bread + parmesan (previously impossible) plus a
+genuinely new-category pick, in 676ms even on the 8B fallback model.
+
+Two bugs found and fixed while verifying, independent of that doc's scope:
+the Groq SDK's default `max_retries=2` was silently multiplying our own
+timeout budgets several-fold on 429s (a 24s response for what should be a
+~3.5s worst case) — set to `max_retries=0` so our own explicit
+primary→fallback→silence chain is what actually runs; and the candidate
+list was being sent to the model in shuffled order, which measurably hurt
+the weaker fallback model's reasoning (directly reproduced a wrong
+"pasta dinner" mission on a floor-cleaner-only cart) — now sorted by score
+before being sent.
+
+**`POST /copilot/debug`** (same request body as `/copilot`, gated behind
+`DEBUG_COPILOT=1` — currently **on** in production) returns the full
+scored candidate slice with reasons, raw model output, per-pick drop
+reasons, and a named `silence_reason` — every silence has a cause, not a
+guess.
+
+**Known current constraint:** this session's debugging came close to the
+shared `GROQ_API_KEY`'s daily token quota on the 70B primary model (both
+local dev and production draw on the same key), so recent verification
+ran mostly on the 8B fallback. `scripts/test_baskets.py` (~15 baskets,
+asserts mission-vs-silence) exists for a full regression pass but hasn't
+been run end-to-end against production yet — worth doing once the 70B
+quota has headroom again, and pasting the pass rate here.
+
 ## Repo layout
 
 ```
@@ -44,7 +82,9 @@ and the build sequence in [`docs/implementation_plan.md`](docs/implementation_pl
 /backend    FastAPI (Python 3.13)   — deploys to Render
 /shared     catalog.json + persona JSON — source of truth, synced into both
 /scripts    seed_catalog.py — regenerates /shared and the synced copies
+            catalog_enrichment.py — tag/complements data for seed_catalog.py
             prewarm_demo.py — pre-warms the copilot cache for the demo script below
+            test_baskets.py — regression check for candidate coverage (docs/improve.md)
 ```
 
 `shared/catalog.json` is authored by `scripts/seed_catalog.py` (edit the
@@ -137,8 +177,10 @@ Category-Expansion Rate.
   on production the night before judging — recommend hosting it externally
   (unlisted YouTube/Drive) rather than committing it to this repo (no Git LFS
   configured, would bloat the history).
-- **Groq quota:** not independently checked against a full judging day's
-  traffic — worth a quick look at the Groq console's daily limits; the
-  debounce + in-memory cache + 8B-instant fallback chain already absorb
-  normal usage, and `scripts/prewarm_demo.py` pre-seeds the cache for the
-  scripted path specifically.
+- **Groq quota:** now confirmed tight, not just theoretical — this session's
+  own debugging came close to the 70B model's daily token limit (see
+  "Copilot candidate selection" above). The debounce + in-memory cache +
+  8B-instant fallback chain absorb normal judging traffic fine, and
+  `scripts/prewarm_demo.py` pre-seeds the cache for the scripted demo path
+  specifically, but a console check (or a paid tier) before judging day is
+  worth doing rather than assuming — check console.groq.com's usage page.
