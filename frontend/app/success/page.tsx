@@ -5,12 +5,13 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { CheckCircle2 } from "lucide-react";
 import confetti from "canvas-confetti";
-import { useOrderStore } from "@/lib/store";
+import { useOrderStore, useUIStore } from "@/lib/store";
 import { getSkuById } from "@/lib/catalog";
 
 export default function SuccessPage() {
   const router = useRouter();
   const order = useOrderStore((s) => s.lastOrder);
+  const openMetricsDrawer = useUIStore((s) => s.openMetricsDrawer);
   const fired = useRef(false);
 
   useEffect(() => {
@@ -67,7 +68,7 @@ export default function SuccessPage() {
       <button
         type="button"
         className="mt-4 text-[12px] text-[var(--ink-500)] underline"
-        onClick={() => alert("Session metrics drawer ships in Phase 3.")}
+        onClick={openMetricsDrawer}
       >
         View session metrics
       </button>

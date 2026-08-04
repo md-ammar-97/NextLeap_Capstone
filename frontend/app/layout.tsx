@@ -4,6 +4,7 @@ import "./globals.css";
 import { ProductSheet } from "@/components/ProductSheet";
 import { ProtectedTrialSheet } from "@/components/ProtectedTrialBadge";
 import { HealthPing } from "@/components/HealthPing";
+import { MetricsDrawer } from "@/components/MetricsDrawer";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           {children}
           <ProductSheet />
           <ProtectedTrialSheet />
+          <MetricsDrawer />
           <HealthPing />
         </div>
       </body>

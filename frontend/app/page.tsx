@@ -1,17 +1,20 @@
 "use client";
 
+import Link from "next/link";
 import { MapPin, Search } from "lucide-react";
 import { CATEGORIES, SKUS, getSkuById } from "@/lib/catalog";
-import { currentPersonaProfile, usePersonaStore, useUIStore } from "@/lib/store";
+import { currentPersonaProfile, useLocationStore, usePersonaStore, useUIStore } from "@/lib/store";
 import { CategoryTile } from "@/components/CategoryTile";
 import { ProductCard } from "@/components/ProductCard";
 import { PromoCarousel } from "@/components/PromoCarousel";
 import { CartBar } from "@/components/CartBar";
+import { PersonaToggle } from "@/components/PersonaToggle";
 
 export default function HomePage() {
   const personaId = usePersonaStore((s) => s.personaId);
   const profile = currentPersonaProfile(personaId);
   const openProductSheet = useUIStore((s) => s.openProductSheet);
+  const address = useLocationStore((s) => s.address);
 
   const orderAgain = profile.order_again_sku_ids
     .map((id) => getSkuById(id))
@@ -25,9 +28,12 @@ export default function HomePage() {
         className="px-4 pt-5 pb-6 rounded-b-[var(--r-lg)]"
         style={{ background: "linear-gradient(160deg, var(--im-purple), var(--im-purple-deep))" }}
       >
-        <div className="flex items-center gap-1.5 text-white">
-          <MapPin size={16} />
-          <span className="text-[13px] font-semibold">Home — HSR Layout, Bengaluru</span>
+        <div className="flex items-center justify-between gap-2">
+          <Link href="/location" className="flex items-center gap-1.5 text-white min-w-0">
+            <MapPin size={16} className="shrink-0" />
+            <span className="text-[13px] font-semibold truncate">Home — {address}</span>
+          </Link>
+          <PersonaToggle />
         </div>
         <p className="text-[11px] text-white/70 mt-0.5">Delivery in 12 minutes</p>
 

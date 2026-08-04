@@ -15,6 +15,7 @@ interface CartState {
   clearCart: () => void;
   dismissSku: (skuId: string) => void;
   dismissModuleForCurrentHash: () => void;
+  resetDismissed: () => void;
   cartHash: () => string;
 }
 
@@ -67,6 +68,7 @@ export const useCartStore = create<CartState>()(
               : [...state.module_dismissed_hashes, hash],
           };
         }),
+      resetDismissed: () => set({ dismissed_sku_ids: [], module_dismissed_hashes: [] }),
       cartHash: () => {
         const lines = get().lines;
         const sorted = [...lines].sort((a, b) => a.sku_id.localeCompare(b.sku_id));
@@ -108,6 +110,25 @@ export function currentPersonaProfile(personaId: PersonaId): PersonaProfile {
   return PERSONAS[personaId];
 }
 
+interface LocationState {
+  address: string;
+  lat: number;
+  lng: number;
+  setLocation: (address: string, lat: number, lng: number) => void;
+}
+
+const BENGALURU_DEFAULT = { address: "HSR Layout, Bengaluru", lat: 12.9716, lng: 77.5946 };
+
+export const useLocationStore = create<LocationState>()(
+  persist(
+    (set) => ({
+      ...BENGALURU_DEFAULT,
+      setLocation: (address, lat, lng) => set({ address, lat, lng }),
+    }),
+    { name: "im-location", storage: createJSONStorage(() => localStorage) }
+  )
+);
+
 interface SessionState {
   sessionId: string;
 }
@@ -143,6 +164,9 @@ interface UIState {
   protectedTrialOpen: boolean;
   openProtectedTrial: () => void;
   closeProtectedTrial: () => void;
+  metricsDrawerOpen: boolean;
+  openMetricsDrawer: () => void;
+  closeMetricsDrawer: () => void;
 }
 
 export const useUIStore = create<UIState>()((set) => ({
@@ -152,6 +176,9 @@ export const useUIStore = create<UIState>()((set) => ({
   protectedTrialOpen: false,
   openProtectedTrial: () => set({ protectedTrialOpen: true }),
   closeProtectedTrial: () => set({ protectedTrialOpen: false }),
+  metricsDrawerOpen: false,
+  openMetricsDrawer: () => set({ metricsDrawerOpen: true }),
+  closeMetricsDrawer: () => set({ metricsDrawerOpen: false }),
 }));
 
 export const useOrderStore = create<OrderState>()(
