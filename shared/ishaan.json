@@ -1,0 +1,24 @@
+{
+  "persona_id": "ishaan",
+  "display_name": "Ishaan",
+  "framing": "deal",
+  "history_category_ids": [
+    "staples",
+    "snacks",
+    "beverages",
+    "dairy",
+    "household",
+    "beauty",
+    "electronics",
+    "party_gifting",
+    "pet"
+  ],
+  "order_again_sku_ids": [
+    "sku_cola_01",
+    "sku_chips_classic_01",
+    "sku_shampoo_01",
+    "sku_powerbank_01",
+    "sku_dog_food_01",
+    "sku_coffee_instant_01"
+  ]
+}

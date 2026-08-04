@@ -1,0 +1,54 @@
+/* tokens.css — design.md section 1. Starting hypotheses extracted from
+   Instamart Android screenshots; verify & overwrite if real screenshots
+   are supplied (see docs/implementation_plan.md Pre-Flight item 1). */
+:root {
+  /* Brand */
+  --im-orange: #fc8019;
+  --im-purple: #8123ad;
+  --im-purple-deep: #5c1f87;
+  --im-yellow: #ffca28;
+  --im-green: #1ba672;
+  --im-red: #e53935;
+
+  /* Neutrals */
+  --ink-900: #1c1c1c;
+  --ink-700: #3e3e3e;
+  --ink-500: #686b78;
+  --ink-300: #a9abb2;
+  --line: #e9e9eb;
+  --bg: #ffffff;
+  --bg-soft: #f5f6f8;
+
+  /* Trust/AI accents (ours, not Instamart's) */
+  --trust-blue: #2563eb;
+  --ai-glow: linear-gradient(90deg, #8123ad, #fc8019);
+
+  /* Shape & elevation */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-pill: 999px;
+  --shadow-card: 0 1px 4px rgba(0, 0, 0, 0.06);
+  --shadow-sheet: 0 -8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --gutter: 16px;
+
+  /* Type scale (size/line-height) */
+  --fs-display: 22px;
+  --lh-display: 28px;
+  --fs-title: 17px;
+  --lh-title: 22px;
+  --fs-body: 14px;
+  --lh-body: 20px;
+  --fs-caption: 12px;
+  --lh-caption: 16px;
+  --fs-micro: 10px;
+  --lh-micro: 14px;
+}

@@ -1,0 +1,3891 @@
+{
+  "categories": [
+    {
+      "category_id": "staples",
+      "name": "Atta, Rice & Dal",
+      "icon": "wheat",
+      "risk_tier": "low",
+      "trust_template": [
+        "expiry",
+        "ingredient"
+      ]
+    },
+    {
+      "category_id": "snacks",
+      "name": "Chips & Namkeen",
+      "icon": "cookie",
+      "risk_tier": "low",
+      "trust_template": [
+        "expiry",
+        "ingredient"
+      ]
+    },
+    {
+      "category_id": "beverages",
+      "name": "Cold Drinks & Juices",
+      "icon": "cup-soda",
+      "risk_tier": "low",
+      "trust_template": [
+        "expiry"
+      ]
+    },
+    {
+      "category_id": "dairy",
+      "name": "Dairy, Bread & Eggs",
+      "icon": "milk",
+      "risk_tier": "medium",
+      "trust_template": [
+        "expiry",
+        "freshness"
+      ]
+    },
+    {
+      "category_id": "household",
+      "name": "Cleaning & Household",
+      "icon": "spray-can",
+      "risk_tier": "low",
+      "trust_template": [
+        "quantity"
+      ]
+    },
+    {
+      "category_id": "fresh",
+      "name": "Fruits & Vegetables",
+      "icon": "carrot",
+      "risk_tier": "high",
+      "trust_template": [
+        "freshness",
+        "sourcing",
+        "return"
+      ]
+    },
+    {
+      "category_id": "beauty",
+      "name": "Beauty & Personal Care",
+      "icon": "sparkles",
+      "risk_tier": "high",
+      "trust_template": [
+        "authenticity",
+        "ingredient",
+        "return"
+      ]
+    },
+    {
+      "category_id": "baby",
+      "name": "Baby Care",
+      "icon": "baby",
+      "risk_tier": "high",
+      "trust_template": [
+        "authenticity",
+        "expiry",
+        "return"
+      ]
+    },
+    {
+      "category_id": "pharma",
+      "name": "Pharmacy & Wellness",
+      "icon": "pill",
+      "risk_tier": "high",
+      "trust_template": [
+        "authenticity",
+        "expiry"
+      ]
+    },
+    {
+      "category_id": "electronics",
+      "name": "Electronics Essentials",
+      "icon": "plug-zap",
+      "risk_tier": "high",
+      "trust_template": [
+        "compatibility",
+        "warranty",
+        "return"
+      ]
+    },
+    {
+      "category_id": "party_gifting",
+      "name": "Party & Gifting",
+      "icon": "gift",
+      "risk_tier": "medium",
+      "trust_template": [
+        "quantity"
+      ]
+    },
+    {
+      "category_id": "pet",
+      "name": "Pet Care",
+      "icon": "paw-print",
+      "risk_tier": "medium",
+      "trust_template": [
+        "ingredient",
+        "expiry"
+      ]
+    }
+  ],
+  "skus": [
+    {
+      "sku_id": "sku_atta_ww_01",
+      "name": "Whole Wheat Atta",
+      "category_id": "staples",
+      "unit": "5 kg",
+      "price": 259,
+      "mrp": 279,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "atta",
+        "wheat",
+        "flour",
+        "staple",
+        "chakki-fresh"
+      ],
+      "description": "Stone-ground 100% whole wheat atta, no maida blend.",
+      "trust_facts": [
+        {
+          "fact_id": "atta_ww_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jun 2027"
+        },
+        {
+          "fact_id": "atta_ww_01_ingr",
+          "type": "ingredient",
+          "label": "100% whole wheat, no maida"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_maida_01",
+      "name": "Refined Maida Flour",
+      "category_id": "staples",
+      "unit": "1 kg",
+      "price": 55,
+      "mrp": 60,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "maida",
+        "refined-flour",
+        "baking"
+      ],
+      "description": "Finely refined maida for baking and frying.",
+      "trust_facts": [
+        {
+          "fact_id": "maida_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Apr 2027"
+        },
+        {
+          "fact_id": "maida_01_ingr",
+          "type": "ingredient",
+          "label": "Refined wheat flour (maida)"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_rice_basmati_01",
+      "name": "Basmati Rice",
+      "category_id": "staples",
+      "unit": "5 kg",
+      "price": 549,
+      "mrp": 599,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "rice",
+        "basmati",
+        "staple"
+      ],
+      "description": "Aged long-grain basmati rice.",
+      "trust_facts": [
+        {
+          "fact_id": "rice_basmati_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Dec 2027"
+        },
+        {
+          "fact_id": "rice_basmati_01_ingr",
+          "type": "ingredient",
+          "label": "Aged, single-origin grain"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "deal": {
+        "label": "8% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_toor_dal_01",
+      "name": "Toor Dal",
+      "category_id": "staples",
+      "unit": "1 kg",
+      "price": 165,
+      "mrp": 180,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "dal",
+        "toor",
+        "pulses",
+        "protein"
+      ],
+      "description": "Unpolished toor dal, high in protein.",
+      "trust_facts": [
+        {
+          "fact_id": "toor_dal_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        },
+        {
+          "fact_id": "toor_dal_01_ingr",
+          "type": "ingredient",
+          "label": "Unpolished, no added color"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_moong_dal_01",
+      "name": "Moong Dal",
+      "category_id": "staples",
+      "unit": "1 kg",
+      "price": 145,
+      "mrp": 155,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "dal",
+        "moong",
+        "pulses",
+        "protein"
+      ],
+      "description": "Split yellow moong dal.",
+      "trust_facts": [
+        {
+          "fact_id": "moong_dal_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        },
+        {
+          "fact_id": "moong_dal_01_ingr",
+          "type": "ingredient",
+          "label": "100% natural, no polish"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_sugar_01",
+      "name": "Sugar",
+      "category_id": "staples",
+      "unit": "1 kg",
+      "price": 48,
+      "mrp": 52,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "sugar",
+        "sweetener"
+      ],
+      "description": "Refined white sugar.",
+      "trust_facts": [
+        {
+          "fact_id": "sugar_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Dec 2028"
+        },
+        {
+          "fact_id": "sugar_01_ingr",
+          "type": "ingredient",
+          "label": "No added additives"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_salt_01",
+      "name": "Iodized Salt",
+      "category_id": "staples",
+      "unit": "1 kg",
+      "price": 24,
+      "mrp": 26,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "salt",
+        "iodized"
+      ],
+      "description": "Vacuum-evaporated iodized salt.",
+      "trust_facts": [
+        {
+          "fact_id": "salt_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Dec 2028"
+        },
+        {
+          "fact_id": "salt_01_ingr",
+          "type": "ingredient",
+          "label": "Iodine fortified"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pasta_01",
+      "name": "Penne Pasta",
+      "category_id": "staples",
+      "unit": "500 g",
+      "price": 89,
+      "mrp": 99,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "italian",
+        "dinner",
+        "pasta",
+        "durum-wheat"
+      ],
+      "description": "Durum wheat penne pasta, cooks in 11 minutes.",
+      "trust_facts": [
+        {
+          "fact_id": "pasta_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Nov 2026"
+        },
+        {
+          "fact_id": "pasta_01_ingr",
+          "type": "ingredient",
+          "label": "100% durum wheat semolina"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_garlicbread_01",
+        "sku_pasta_sauce_01",
+        "sku_parmesan_01",
+        "sku_basil_bunch_01",
+        "sku_mushroom_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 100
+      }
+    },
+    {
+      "sku_id": "sku_pasta_sauce_01",
+      "name": "Tomato Basil Pasta Sauce",
+      "category_id": "staples",
+      "unit": "350 g",
+      "price": 149,
+      "mrp": 169,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "italian",
+        "dinner",
+        "pasta-complement",
+        "sauce"
+      ],
+      "description": "Slow-cooked tomato basil sauce, no artificial color.",
+      "trust_facts": [
+        {
+          "fact_id": "pasta_sauce_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Aug 2026"
+        },
+        {
+          "fact_id": "pasta_sauce_01_ingr",
+          "type": "ingredient",
+          "label": "No artificial color or preservatives"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01",
+        "sku_garlicbread_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 165
+      },
+      "deal": {
+        "label": "12% OFF",
+        "lowest_30d": true
+      }
+    },
+    {
+      "sku_id": "sku_besan_01",
+      "name": "Besan (Gram Flour)",
+      "category_id": "staples",
+      "unit": "1 kg",
+      "price": 89,
+      "mrp": 95,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "besan",
+        "gram-flour",
+        "staple"
+      ],
+      "description": "Roasted gram flour for pakoras and curries.",
+      "trust_facts": [
+        {
+          "fact_id": "besan_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        },
+        {
+          "fact_id": "besan_01_ingr",
+          "type": "ingredient",
+          "label": "100% chana dal ground"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_garlicbread_01",
+      "name": "Baker's Dozen Garlic Bread",
+      "category_id": "snacks",
+      "unit": "250 g",
+      "price": 99,
+      "mrp": 115,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "italian",
+        "dinner",
+        "bread",
+        "pasta-complement"
+      ],
+      "description": "Stone-baked garlic bread, ready in 5 min.",
+      "trust_facts": [
+        {
+          "fact_id": "garlicbread_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Nov 2026"
+        },
+        {
+          "fact_id": "garlicbread_01_ingr",
+          "type": "ingredient",
+          "label": "Whole wheat, no maida"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01",
+        "sku_pasta_sauce_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 110
+      },
+      "deal": {
+        "label": "14% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_chips_classic_01",
+      "name": "Classic Salted Potato Chips",
+      "category_id": "snacks",
+      "unit": "52 g",
+      "price": 20,
+      "mrp": 20,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "chips",
+        "salted",
+        "snack"
+      ],
+      "description": "Thin-cut, kettle-fried potato chips.",
+      "trust_facts": [
+        {
+          "fact_id": "chips_classic_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jan 2027"
+        },
+        {
+          "fact_id": "chips_classic_01_ingr",
+          "type": "ingredient",
+          "label": "No artificial flavors"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_namkeen_mix_01",
+      "name": "Bhujia Sev Mix",
+      "category_id": "snacks",
+      "unit": "200 g",
+      "price": 65,
+      "mrp": 70,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "namkeen",
+        "sev",
+        "snack"
+      ],
+      "description": "Crunchy besan sev with peanuts and spices.",
+      "trust_facts": [
+        {
+          "fact_id": "namkeen_mix_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        },
+        {
+          "fact_id": "namkeen_mix_01_ingr",
+          "type": "ingredient",
+          "label": "Cooked in refined sunflower oil"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_biscuits_marie_01",
+      "name": "Marie Gold Biscuits",
+      "category_id": "snacks",
+      "unit": "250 g",
+      "price": 35,
+      "mrp": 40,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "biscuits",
+        "tea-time"
+      ],
+      "description": "Light, crisp tea-time biscuits.",
+      "trust_facts": [
+        {
+          "fact_id": "biscuits_marie_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        },
+        {
+          "fact_id": "biscuits_marie_01_ingr",
+          "type": "ingredient",
+          "label": "No trans fat"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_popcorn_bhutta_01",
+      "name": "Masala Corn Puffs",
+      "category_id": "snacks",
+      "unit": "60 g",
+      "price": 20,
+      "mrp": 20,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "popcorn",
+        "masala",
+        "snack"
+      ],
+      "description": "Roasted corn puffs with tangy masala.",
+      "trust_facts": [
+        {
+          "fact_id": "popcorn_bhutta_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Dec 2026"
+        },
+        {
+          "fact_id": "popcorn_bhutta_01_ingr",
+          "type": "ingredient",
+          "label": "Roasted, not fried"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_nachos_01",
+      "name": "Nacho Chips with Salsa Dip",
+      "category_id": "snacks",
+      "unit": "150 g",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "nachos",
+        "party",
+        "dip"
+      ],
+      "description": "Corn nachos with a tangy tomato salsa dip.",
+      "trust_facts": [
+        {
+          "fact_id": "nachos_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        },
+        {
+          "fact_id": "nachos_01_ingr",
+          "type": "ingredient",
+          "label": "No artificial color"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_party_supplies_set_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 110
+      }
+    },
+    {
+      "sku_id": "sku_energy_bar_01",
+      "name": "Peanut Chikki Energy Bar",
+      "category_id": "snacks",
+      "unit": "40 g",
+      "price": 25,
+      "mrp": 25,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "energy-bar",
+        "peanut",
+        "snack"
+      ],
+      "description": "Jaggery-roasted peanut chikki bar.",
+      "trust_facts": [
+        {
+          "fact_id": "energy_bar_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jun 2027"
+        },
+        {
+          "fact_id": "energy_bar_01_ingr",
+          "type": "ingredient",
+          "label": "No refined sugar"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_dryfruit_mix_01",
+      "name": "Premium Dry Fruit Mix",
+      "category_id": "snacks",
+      "unit": "200 g",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "dry-fruits",
+        "premium",
+        "healthy"
+      ],
+      "description": "Almonds, cashews and raisins mix.",
+      "trust_facts": [
+        {
+          "fact_id": "dryfruit_mix_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Sep 2026"
+        },
+        {
+          "fact_id": "dryfruit_mix_01_ingr",
+          "type": "ingredient",
+          "label": "No added preservatives"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "deal": {
+        "label": "13% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_cookies_choc_01",
+      "name": "Chocolate Chip Cookies",
+      "category_id": "snacks",
+      "unit": "150 g",
+      "price": 79,
+      "mrp": 89,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cookies",
+        "chocolate",
+        "snack"
+      ],
+      "description": "Butter cookies loaded with choc chips.",
+      "trust_facts": [
+        {
+          "fact_id": "cookies_choc_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jan 2027"
+        },
+        {
+          "fact_id": "cookies_choc_01_ingr",
+          "type": "ingredient",
+          "label": "Real cocoa, no compound"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pizza_bread_01",
+      "name": "Mini Pizza Base 4-pack",
+      "category_id": "snacks",
+      "unit": "200 g",
+      "price": 79,
+      "mrp": 89,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pizza",
+        "dinner",
+        "bread"
+      ],
+      "description": "Ready-to-top mini pizza bases.",
+      "trust_facts": [
+        {
+          "fact_id": "pizza_bread_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Oct 2026"
+        },
+        {
+          "fact_id": "pizza_bread_01_ingr",
+          "type": "ingredient",
+          "label": "No maida — multigrain base"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_sauce_01",
+        "sku_cheese_slices_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 90
+      }
+    },
+    {
+      "sku_id": "sku_cola_01",
+      "name": "Cola Soft Drink",
+      "category_id": "beverages",
+      "unit": "750 ml",
+      "price": 40,
+      "mrp": 40,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cola",
+        "soft-drink"
+      ],
+      "description": "Classic carbonated cola.",
+      "trust_facts": [
+        {
+          "fact_id": "cola_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Apr 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_grape_juice_01",
+      "name": "Sparkling Grape Juice",
+      "category_id": "beverages",
+      "unit": "1 L",
+      "price": 129,
+      "mrp": 149,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "juice",
+        "grape",
+        "dinner",
+        "non-alcoholic"
+      ],
+      "description": "Sparkling non-alcoholic grape juice, dinner-table favourite.",
+      "trust_facts": [
+        {
+          "fact_id": "grape_juice_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01",
+        "sku_garlicbread_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 145
+      }
+    },
+    {
+      "sku_id": "sku_orange_juice_01",
+      "name": "100% Orange Juice",
+      "category_id": "beverages",
+      "unit": "1 L",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "juice",
+        "orange",
+        "breakfast"
+      ],
+      "description": "No added sugar, 100% fruit juice.",
+      "trust_facts": [
+        {
+          "fact_id": "orange_juice_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_soda_water_01",
+      "name": "Soda Water",
+      "category_id": "beverages",
+      "unit": "750 ml",
+      "price": 30,
+      "mrp": 30,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "soda",
+        "mixer"
+      ],
+      "description": "Plain carbonated soda water.",
+      "trust_facts": [
+        {
+          "fact_id": "soda_water_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jun 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_iced_tea_01",
+      "name": "Lemon Iced Tea",
+      "category_id": "beverages",
+      "unit": "500 ml",
+      "price": 45,
+      "mrp": 50,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "iced-tea",
+        "lemon"
+      ],
+      "description": "Chilled lemon iced tea.",
+      "trust_facts": [
+        {
+          "fact_id": "iced_tea_01_expi",
+          "type": "expiry",
+          "label": "Expiry: May 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_coconut_water_01",
+      "name": "Tender Coconut Water",
+      "category_id": "beverages",
+      "unit": "200 ml",
+      "price": 45,
+      "mrp": 45,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "coconut-water",
+        "natural"
+      ],
+      "description": "Packaged tender coconut water.",
+      "trust_facts": [
+        {
+          "fact_id": "coconut_water_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jan 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_energy_drink_01",
+      "name": "Energy Drink",
+      "category_id": "beverages",
+      "unit": "250 ml",
+      "price": 110,
+      "mrp": 120,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "energy-drink",
+        "caffeine"
+      ],
+      "description": "Caffeinated energy drink.",
+      "trust_facts": [
+        {
+          "fact_id": "energy_drink_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Sep 2026"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_coffee_instant_01",
+      "name": "Instant Coffee",
+      "category_id": "beverages",
+      "unit": "100 g",
+      "price": 249,
+      "mrp": 279,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "coffee",
+        "instant"
+      ],
+      "description": "Freeze-dried instant coffee granules.",
+      "trust_facts": [
+        {
+          "fact_id": "coffee_instant_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Dec 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "deal": {
+        "label": "11% OFF",
+        "lowest_30d": true
+      }
+    },
+    {
+      "sku_id": "sku_green_tea_01",
+      "name": "Green Tea Bags",
+      "category_id": "beverages",
+      "unit": "25 ct",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "tea",
+        "green-tea",
+        "healthy"
+      ],
+      "description": "Antioxidant-rich green tea bags.",
+      "trust_facts": [
+        {
+          "fact_id": "green_tea_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Oct 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_lemonade_01",
+      "name": "Fizzy Lemonade",
+      "category_id": "beverages",
+      "unit": "750 ml",
+      "price": 40,
+      "mrp": 40,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "lemonade",
+        "soft-drink"
+      ],
+      "description": "Tangy fizzy lemonade.",
+      "trust_facts": [
+        {
+          "fact_id": "lemonade_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Apr 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_milk_01",
+      "name": "Toned Milk",
+      "category_id": "dairy",
+      "unit": "1 L",
+      "price": 66,
+      "mrp": 66,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "milk",
+        "dairy",
+        "daily"
+      ],
+      "description": "Pasteurized toned milk.",
+      "trust_facts": [
+        {
+          "fact_id": "milk_01_expi",
+          "type": "expiry",
+          "label": "Expiry: 2 days from delivery"
+        },
+        {
+          "fact_id": "milk_01_fres",
+          "type": "freshness",
+          "label": "Pasteurized same-day"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_paneer_01",
+      "name": "Fresh Paneer Block",
+      "category_id": "dairy",
+      "unit": "200 g",
+      "price": 89,
+      "mrp": 95,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "paneer",
+        "cottage-cheese"
+      ],
+      "description": "Soft, fresh cottage cheese block.",
+      "trust_facts": [
+        {
+          "fact_id": "paneer_01_expi",
+          "type": "expiry",
+          "label": "Expiry: 4 days from delivery"
+        },
+        {
+          "fact_id": "paneer_01_fres",
+          "type": "freshness",
+          "label": "Made from fresh milk, no preservatives"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_parmesan_01",
+      "name": "Aged Hard Cheese Block",
+      "category_id": "dairy",
+      "unit": "200 g",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cheese",
+        "italian",
+        "pasta-complement"
+      ],
+      "description": "Aged hard cheese for grating over pasta.",
+      "trust_facts": [
+        {
+          "fact_id": "parmesan_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jan 2027"
+        },
+        {
+          "fact_id": "parmesan_01_fres",
+          "type": "freshness",
+          "label": "Aged 12 months, brand-sealed"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01",
+        "sku_pasta_sauce_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 390
+      },
+      "deal": {
+        "label": "12% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_curd_01",
+      "name": "Fresh Curd",
+      "category_id": "dairy",
+      "unit": "400 g",
+      "price": 40,
+      "mrp": 42,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "curd",
+        "yogurt",
+        "daily"
+      ],
+      "description": "Thick set curd.",
+      "trust_facts": [
+        {
+          "fact_id": "curd_01_expi",
+          "type": "expiry",
+          "label": "Expiry: 3 days from delivery"
+        },
+        {
+          "fact_id": "curd_01_fres",
+          "type": "freshness",
+          "label": "Set daily, no added sugar"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_butter_01",
+      "name": "Salted Butter",
+      "category_id": "dairy",
+      "unit": "100 g",
+      "price": 55,
+      "mrp": 58,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "butter",
+        "dairy"
+      ],
+      "description": "Creamy salted table butter.",
+      "trust_facts": [
+        {
+          "fact_id": "butter_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        },
+        {
+          "fact_id": "butter_01_fres",
+          "type": "freshness",
+          "label": "Made from fresh cream"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_ghee_01",
+      "name": "Pure Cow Ghee",
+      "category_id": "dairy",
+      "unit": "500 ml",
+      "price": 349,
+      "mrp": 379,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "ghee",
+        "cow-ghee"
+      ],
+      "description": "Traditional bilona-method cow ghee.",
+      "trust_facts": [
+        {
+          "fact_id": "ghee_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Nov 2027"
+        },
+        {
+          "fact_id": "ghee_01_fres",
+          "type": "freshness",
+          "label": "100% pure, no vanaspati"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_cheese_slices_01",
+      "name": "Processed Cheese Slices",
+      "category_id": "dairy",
+      "unit": "10 pk",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cheese",
+        "slices",
+        "sandwich"
+      ],
+      "description": "Ready-to-melt cheese slices.",
+      "trust_facts": [
+        {
+          "fact_id": "cheese_slices_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        },
+        {
+          "fact_id": "cheese_slices_01_fres",
+          "type": "freshness",
+          "label": "No added color"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pizza_bread_01"
+      ]
+    },
+    {
+      "sku_id": "sku_yogurt_greek_01",
+      "name": "Greek Yogurt Cup",
+      "category_id": "dairy",
+      "unit": "100 g",
+      "price": 45,
+      "mrp": 50,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "yogurt",
+        "greek",
+        "protein"
+      ],
+      "description": "Thick, high-protein Greek yogurt.",
+      "trust_facts": [
+        {
+          "fact_id": "yogurt_greek_01_expi",
+          "type": "expiry",
+          "label": "Expiry: 6 days from delivery"
+        },
+        {
+          "fact_id": "yogurt_greek_01_fres",
+          "type": "freshness",
+          "label": "Double the protein of regular curd"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_cream_01",
+      "name": "Fresh Cream",
+      "category_id": "dairy",
+      "unit": "200 ml",
+      "price": 65,
+      "mrp": 70,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cream",
+        "cooking"
+      ],
+      "description": "Fresh dairy cream for cooking and desserts.",
+      "trust_facts": [
+        {
+          "fact_id": "cream_01_expi",
+          "type": "expiry",
+          "label": "Expiry: 5 days from delivery"
+        },
+        {
+          "fact_id": "cream_01_fres",
+          "type": "freshness",
+          "label": "Made from fresh milk"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_buttermilk_01",
+      "name": "Spiced Buttermilk",
+      "category_id": "dairy",
+      "unit": "200 ml",
+      "price": 20,
+      "mrp": 20,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "buttermilk",
+        "chaas"
+      ],
+      "description": "Refreshing spiced buttermilk.",
+      "trust_facts": [
+        {
+          "fact_id": "buttermilk_01_expi",
+          "type": "expiry",
+          "label": "Expiry: 2 days from delivery"
+        },
+        {
+          "fact_id": "buttermilk_01_fres",
+          "type": "freshness",
+          "label": "No added preservatives"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_dishwash_liquid_01",
+      "name": "Dishwash Liquid",
+      "category_id": "household",
+      "unit": "500 ml",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "dishwash",
+        "cleaning"
+      ],
+      "description": "Grease-cutting dishwash liquid.",
+      "trust_facts": [
+        {
+          "fact_id": "dishwash_liquid_01_quan",
+          "type": "quantity",
+          "label": "500ml — approx. 150 washes"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_detergent_powder_01",
+      "name": "Detergent Powder",
+      "category_id": "household",
+      "unit": "1 kg",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "detergent",
+        "laundry"
+      ],
+      "description": "Stain-removing detergent powder.",
+      "trust_facts": [
+        {
+          "fact_id": "detergent_powder_01_quan",
+          "type": "quantity",
+          "label": "1kg — approx. 12 loads"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "deal": {
+        "label": "10% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_toilet_cleaner_01",
+      "name": "Toilet Cleaner",
+      "category_id": "household",
+      "unit": "500 ml",
+      "price": 89,
+      "mrp": 99,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "toilet-cleaner",
+        "cleaning"
+      ],
+      "description": "Disinfectant toilet cleaner.",
+      "trust_facts": [
+        {
+          "fact_id": "toilet_cleaner_01_quan",
+          "type": "quantity",
+          "label": "500ml — approx. 20 uses"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_floor_cleaner_01",
+      "name": "Floor Cleaner",
+      "category_id": "household",
+      "unit": "1 L",
+      "price": 129,
+      "mrp": 145,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "floor-cleaner",
+        "cleaning"
+      ],
+      "description": "Disinfectant floor cleaner, fresh scent.",
+      "trust_facts": [
+        {
+          "fact_id": "floor_cleaner_01_quan",
+          "type": "quantity",
+          "label": "1L — approx. 15 mopping sessions"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_trash_bags_01",
+      "name": "Garbage Bags",
+      "category_id": "household",
+      "unit": "30 pc",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "garbage-bags",
+        "trash"
+      ],
+      "description": "Leak-proof medium garbage bags.",
+      "trust_facts": [
+        {
+          "fact_id": "trash_bags_01_quan",
+          "type": "quantity",
+          "label": "30 bags per roll"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_tissue_roll_01",
+      "name": "Kitchen Tissue Roll",
+      "category_id": "household",
+      "unit": "2 pk",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "tissue",
+        "kitchen"
+      ],
+      "description": "Absorbent kitchen tissue rolls.",
+      "trust_facts": [
+        {
+          "fact_id": "tissue_roll_01_quan",
+          "type": "quantity",
+          "label": "2 rolls, 60 sheets each"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_mosquito_repellent_01",
+      "name": "Mosquito Repellent Liquid Refill",
+      "category_id": "household",
+      "unit": "45 ml",
+      "price": 89,
+      "mrp": 95,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "mosquito",
+        "repellent"
+      ],
+      "description": "Liquid vaporizer refill.",
+      "trust_facts": [
+        {
+          "fact_id": "mosquito_repellent_01_quan",
+          "type": "quantity",
+          "label": "45ml — lasts 45 nights"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_air_freshener_01",
+      "name": "Room Air Freshener Spray",
+      "category_id": "household",
+      "unit": "300 ml",
+      "price": 199,
+      "mrp": 219,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "air-freshener",
+        "fragrance"
+      ],
+      "description": "Long-lasting room fragrance spray.",
+      "trust_facts": [
+        {
+          "fact_id": "air_freshener_01_quan",
+          "type": "quantity",
+          "label": "300ml — approx. 300 sprays"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_scrub_pad_01",
+      "name": "Scrub Pad",
+      "category_id": "household",
+      "unit": "3 pk",
+      "price": 45,
+      "mrp": 50,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "scrub-pad",
+        "cleaning"
+      ],
+      "description": "Heavy-duty kitchen scrub pads.",
+      "trust_facts": [
+        {
+          "fact_id": "scrub_pad_01_quan",
+          "type": "quantity",
+          "label": "Pack of 3"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_aluminium_foil_01",
+      "name": "Aluminium Foil",
+      "category_id": "household",
+      "unit": "5 m",
+      "price": 79,
+      "mrp": 85,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "foil",
+        "kitchen"
+      ],
+      "description": "Food-grade aluminium foil roll.",
+      "trust_facts": [
+        {
+          "fact_id": "aluminium_foil_01_quan",
+          "type": "quantity",
+          "label": "5 metre roll"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_tomato_01",
+      "name": "Fresh Tomatoes",
+      "category_id": "fresh",
+      "unit": "500 g",
+      "price": 29,
+      "mrp": 35,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "tomato",
+        "vegetable"
+      ],
+      "description": "Farm-fresh, hand-picked tomatoes.",
+      "trust_facts": [
+        {
+          "fact_id": "tomato_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 48 hrs"
+        },
+        {
+          "fact_id": "tomato_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from local farms"
+        },
+        {
+          "fact_id": "tomato_01_retu",
+          "type": "return",
+          "label": "Free replacement if not fresh"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 30
+      }
+    },
+    {
+      "sku_id": "sku_basil_bunch_01",
+      "name": "Fresh Basil Bunch",
+      "category_id": "fresh",
+      "unit": "50 g",
+      "price": 39,
+      "mrp": 45,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "basil",
+        "herb",
+        "italian",
+        "pasta-complement"
+      ],
+      "description": "Aromatic fresh basil, perfect for pasta.",
+      "trust_facts": [
+        {
+          "fact_id": "basil_bunch_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 24 hrs"
+        },
+        {
+          "fact_id": "basil_bunch_01_sour",
+          "type": "sourcing",
+          "label": "Grown pesticide-light"
+        },
+        {
+          "fact_id": "basil_bunch_01_retu",
+          "type": "return",
+          "label": "Free replacement if wilted"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01",
+        "sku_pasta_sauce_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 45
+      }
+    },
+    {
+      "sku_id": "sku_onion_01",
+      "name": "Onions",
+      "category_id": "fresh",
+      "unit": "1 kg",
+      "price": 35,
+      "mrp": 40,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "onion",
+        "vegetable"
+      ],
+      "description": "Everyday cooking onions.",
+      "trust_facts": [
+        {
+          "fact_id": "onion_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 72 hrs"
+        },
+        {
+          "fact_id": "onion_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from Nashik belt"
+        },
+        {
+          "fact_id": "onion_01_retu",
+          "type": "return",
+          "label": "Free replacement if spoiled"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_spinach_01",
+      "name": "Fresh Spinach",
+      "category_id": "fresh",
+      "unit": "200 g",
+      "price": 25,
+      "mrp": 30,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "spinach",
+        "leafy-green"
+      ],
+      "description": "Washed and trimmed spinach leaves.",
+      "trust_facts": [
+        {
+          "fact_id": "spinach_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 24 hrs"
+        },
+        {
+          "fact_id": "spinach_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from local farms"
+        },
+        {
+          "fact_id": "spinach_01_retu",
+          "type": "return",
+          "label": "Free replacement if wilted"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_capsicum_01",
+      "name": "Capsicum",
+      "category_id": "fresh",
+      "unit": "250 g",
+      "price": 35,
+      "mrp": 40,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "capsicum",
+        "vegetable"
+      ],
+      "description": "Crisp green capsicum.",
+      "trust_facts": [
+        {
+          "fact_id": "capsicum_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 48 hrs"
+        },
+        {
+          "fact_id": "capsicum_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from local farms"
+        },
+        {
+          "fact_id": "capsicum_01_retu",
+          "type": "return",
+          "label": "Free replacement if spoiled"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_banana_01",
+      "name": "Robusta Bananas",
+      "category_id": "fresh",
+      "unit": "6 pc",
+      "price": 42,
+      "mrp": 48,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "banana",
+        "fruit"
+      ],
+      "description": "Naturally ripened bananas.",
+      "trust_facts": [
+        {
+          "fact_id": "banana_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 72 hrs"
+        },
+        {
+          "fact_id": "banana_01_sour",
+          "type": "sourcing",
+          "label": "Naturally ripened, no carbide"
+        },
+        {
+          "fact_id": "banana_01_retu",
+          "type": "return",
+          "label": "Free replacement if overripe"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_apple_01",
+      "name": "Shimla Apples",
+      "category_id": "fresh",
+      "unit": "4 pc",
+      "price": 149,
+      "mrp": 169,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "apple",
+        "fruit"
+      ],
+      "description": "Crisp Himachal Shimla apples.",
+      "trust_facts": [
+        {
+          "fact_id": "apple_01_fres",
+          "type": "freshness",
+          "label": "Harvested within a week"
+        },
+        {
+          "fact_id": "apple_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from Himachal orchards"
+        },
+        {
+          "fact_id": "apple_01_retu",
+          "type": "return",
+          "label": "Free replacement if bruised"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "deal": {
+        "label": "11% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_mushroom_01",
+      "name": "Button Mushrooms",
+      "category_id": "fresh",
+      "unit": "200 g",
+      "price": 55,
+      "mrp": 60,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "mushroom",
+        "pasta-complement"
+      ],
+      "description": "Fresh white button mushrooms.",
+      "trust_facts": [
+        {
+          "fact_id": "mushroom_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 24 hrs"
+        },
+        {
+          "fact_id": "mushroom_01_sour",
+          "type": "sourcing",
+          "label": "Farm-cultivated, pesticide-light"
+        },
+        {
+          "fact_id": "mushroom_01_retu",
+          "type": "return",
+          "label": "Free replacement if spoiled"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01",
+        "sku_pasta_sauce_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 60
+      }
+    },
+    {
+      "sku_id": "sku_garlic_pod_01",
+      "name": "Garlic Pods",
+      "category_id": "fresh",
+      "unit": "100 g",
+      "price": 25,
+      "mrp": 28,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "garlic",
+        "vegetable"
+      ],
+      "description": "Fresh garlic pods.",
+      "trust_facts": [
+        {
+          "fact_id": "garlic_pod_01_fres",
+          "type": "freshness",
+          "label": "Harvested within a week"
+        },
+        {
+          "fact_id": "garlic_pod_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from local farms"
+        },
+        {
+          "fact_id": "garlic_pod_01_retu",
+          "type": "return",
+          "label": "Free replacement if spoiled"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_pasta_01"
+      ]
+    },
+    {
+      "sku_id": "sku_lemon_01",
+      "name": "Lemons",
+      "category_id": "fresh",
+      "unit": "4 pc",
+      "price": 20,
+      "mrp": 24,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "lemon",
+        "fruit"
+      ],
+      "description": "Juicy fresh lemons.",
+      "trust_facts": [
+        {
+          "fact_id": "lemon_01_fres",
+          "type": "freshness",
+          "label": "Harvested within 72 hrs"
+        },
+        {
+          "fact_id": "lemon_01_sour",
+          "type": "sourcing",
+          "label": "Sourced from local farms"
+        },
+        {
+          "fact_id": "lemon_01_retu",
+          "type": "return",
+          "label": "Free replacement if dried out"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_micellar_water_01",
+      "name": "Micellar Cleansing Water",
+      "category_id": "beauty",
+      "unit": "200 ml",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "micellar-water",
+        "cleanser",
+        "skincare"
+      ],
+      "description": "Gentle no-rinse micellar cleansing water.",
+      "trust_facts": [
+        {
+          "fact_id": "micellar_water_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "micellar_water_01_ingr",
+          "type": "ingredient",
+          "label": "No parabens, no sulphates"
+        },
+        {
+          "fact_id": "micellar_water_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 390
+      },
+      "deal": {
+        "label": "13% OFF",
+        "lowest_30d": true
+      }
+    },
+    {
+      "sku_id": "sku_face_wash_01",
+      "name": "Foaming Face Wash",
+      "category_id": "beauty",
+      "unit": "100 ml",
+      "price": 199,
+      "mrp": 225,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "face-wash",
+        "skincare"
+      ],
+      "description": "Gentle foaming daily face wash.",
+      "trust_facts": [
+        {
+          "fact_id": "face_wash_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "face_wash_01_ingr",
+          "type": "ingredient",
+          "label": "Soap-free formula"
+        },
+        {
+          "fact_id": "face_wash_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_sunscreen_01",
+      "name": "SPF 50 Sunscreen Lotion",
+      "category_id": "beauty",
+      "unit": "50 ml",
+      "price": 449,
+      "mrp": 499,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "sunscreen",
+        "spf",
+        "skincare"
+      ],
+      "description": "Broad-spectrum SPF 50 sunscreen.",
+      "trust_facts": [
+        {
+          "fact_id": "sunscreen_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "sunscreen_01_ingr",
+          "type": "ingredient",
+          "label": "No white cast, non-greasy"
+        },
+        {
+          "fact_id": "sunscreen_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 505
+      }
+    },
+    {
+      "sku_id": "sku_lip_balm_01",
+      "name": "Shea Butter Lip Balm",
+      "category_id": "beauty",
+      "unit": "4 g",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "lip-balm",
+        "skincare"
+      ],
+      "description": "Moisturizing shea butter lip balm.",
+      "trust_facts": [
+        {
+          "fact_id": "lip_balm_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "lip_balm_01_ingr",
+          "type": "ingredient",
+          "label": "Shea butter, no mineral oil"
+        },
+        {
+          "fact_id": "lip_balm_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_shampoo_01",
+      "name": "Anti-Dandruff Shampoo",
+      "category_id": "beauty",
+      "unit": "180 ml",
+      "price": 199,
+      "mrp": 220,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "shampoo",
+        "haircare"
+      ],
+      "description": "Anti-dandruff, clinically tested shampoo.",
+      "trust_facts": [
+        {
+          "fact_id": "shampoo_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "shampoo_01_ingr",
+          "type": "ingredient",
+          "label": "Clinically tested formula"
+        },
+        {
+          "fact_id": "shampoo_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_body_lotion_01",
+      "name": "Body Lotion",
+      "category_id": "beauty",
+      "unit": "200 ml",
+      "price": 175,
+      "mrp": 195,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "body-lotion",
+        "skincare"
+      ],
+      "description": "24-hour moisturizing body lotion.",
+      "trust_facts": [
+        {
+          "fact_id": "body_lotion_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "body_lotion_01_ingr",
+          "type": "ingredient",
+          "label": "Non-sticky, fast-absorbing"
+        },
+        {
+          "fact_id": "body_lotion_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_face_serum_01",
+      "name": "Vitamin C Face Serum",
+      "category_id": "beauty",
+      "unit": "30 ml",
+      "price": 549,
+      "mrp": 599,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "serum",
+        "vitamin-c",
+        "skincare"
+      ],
+      "description": "Brightening vitamin C face serum.",
+      "trust_facts": [
+        {
+          "fact_id": "face_serum_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "face_serum_01_ingr",
+          "type": "ingredient",
+          "label": "10% Vitamin C concentration"
+        },
+        {
+          "fact_id": "face_serum_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 615
+      }
+    },
+    {
+      "sku_id": "sku_kajal_01",
+      "name": "Smudge-Proof Kajal",
+      "category_id": "beauty",
+      "unit": "0.35 g",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "kajal",
+        "makeup"
+      ],
+      "description": "Long-wear smudge-proof kajal.",
+      "trust_facts": [
+        {
+          "fact_id": "kajal_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "kajal_01_ingr",
+          "type": "ingredient",
+          "label": "Ophthalmologist tested"
+        },
+        {
+          "fact_id": "kajal_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_hand_cream_01",
+      "name": "Hand Cream",
+      "category_id": "beauty",
+      "unit": "50 g",
+      "price": 125,
+      "mrp": 140,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "hand-cream",
+        "skincare"
+      ],
+      "description": "Deep moisturizing hand cream.",
+      "trust_facts": [
+        {
+          "fact_id": "hand_cream_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "hand_cream_01_ingr",
+          "type": "ingredient",
+          "label": "Glycerin-based formula"
+        },
+        {
+          "fact_id": "hand_cream_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_face_mask_sheet_01",
+      "name": "Hydrating Sheet Mask",
+      "category_id": "beauty",
+      "unit": "1 pc",
+      "price": 79,
+      "mrp": 89,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "sheet-mask",
+        "skincare"
+      ],
+      "description": "Single-use hydrating sheet mask.",
+      "trust_facts": [
+        {
+          "fact_id": "face_mask_sheet_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, brand-sealed"
+        },
+        {
+          "fact_id": "face_mask_sheet_01_ingr",
+          "type": "ingredient",
+          "label": "Aloe vera infused"
+        },
+        {
+          "fact_id": "face_mask_sheet_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_diapers_01",
+      "name": "Baby Diapers Medium",
+      "category_id": "baby",
+      "unit": "20 pc",
+      "price": 449,
+      "mrp": 499,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "diapers",
+        "baby"
+      ],
+      "description": "Ultra-absorbent medium diapers.",
+      "trust_facts": [
+        {
+          "fact_id": "diapers_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "diapers_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Oct 2028"
+        },
+        {
+          "fact_id": "diapers_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 505
+      }
+    },
+    {
+      "sku_id": "sku_baby_wipes_01",
+      "name": "Baby Wipes",
+      "category_id": "baby",
+      "unit": "80 pc",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "wipes",
+        "baby"
+      ],
+      "description": "Fragrance-free baby wipes.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_wipes_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_wipes_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Aug 2028"
+        },
+        {
+          "fact_id": "baby_wipes_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_baby_lotion_01",
+      "name": "Baby Lotion",
+      "category_id": "baby",
+      "unit": "100 ml",
+      "price": 175,
+      "mrp": 195,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "baby-lotion",
+        "skincare"
+      ],
+      "description": "Mild, tear-free baby lotion.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_lotion_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_lotion_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jul 2027"
+        },
+        {
+          "fact_id": "baby_lotion_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_baby_shampoo_01",
+      "name": "Tear-Free Baby Shampoo",
+      "category_id": "baby",
+      "unit": "100 ml",
+      "price": 165,
+      "mrp": 180,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "baby-shampoo",
+        "haircare"
+      ],
+      "description": "No-tears formula baby shampoo.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_shampoo_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_shampoo_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jun 2027"
+        },
+        {
+          "fact_id": "baby_shampoo_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_baby_powder_01",
+      "name": "Baby Powder",
+      "category_id": "baby",
+      "unit": "100 g",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "baby-powder",
+        "skincare"
+      ],
+      "description": "Talc-free baby powder.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_powder_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_powder_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Sep 2027"
+        },
+        {
+          "fact_id": "baby_powder_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_baby_food_cereal_01",
+      "name": "Baby Cereal",
+      "category_id": "baby",
+      "unit": "300 g",
+      "price": 249,
+      "mrp": 275,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "baby-food",
+        "cereal"
+      ],
+      "description": "Iron-fortified baby cereal, 6 months+.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_food_cereal_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_food_cereal_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        },
+        {
+          "fact_id": "baby_food_cereal_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 280
+      }
+    },
+    {
+      "sku_id": "sku_baby_oil_01",
+      "name": "Baby Massage Oil",
+      "category_id": "baby",
+      "unit": "100 ml",
+      "price": 145,
+      "mrp": 160,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "baby-oil",
+        "skincare"
+      ],
+      "description": "Nourishing baby massage oil.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_oil_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_oil_01_expi",
+          "type": "expiry",
+          "label": "Expiry: May 2027"
+        },
+        {
+          "fact_id": "baby_oil_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_baby_soap_01",
+      "name": "Baby Soap Bar",
+      "category_id": "baby",
+      "unit": "75 g",
+      "price": 65,
+      "mrp": 72,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "baby-soap",
+        "skincare"
+      ],
+      "description": "Mild moisturizing baby soap.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_soap_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_soap_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Apr 2027"
+        },
+        {
+          "fact_id": "baby_soap_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pacifier_01",
+      "name": "Silicone Pacifier",
+      "category_id": "baby",
+      "unit": "1 pc",
+      "price": 199,
+      "mrp": 220,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pacifier",
+        "feeding"
+      ],
+      "description": "BPA-free silicone pacifier.",
+      "trust_facts": [
+        {
+          "fact_id": "pacifier_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "pacifier_01_expi",
+          "type": "expiry",
+          "label": "BPA-free certified"
+        },
+        {
+          "fact_id": "pacifier_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_baby_bottle_01",
+      "name": "Feeding Bottle",
+      "category_id": "baby",
+      "unit": "250 ml",
+      "price": 299,
+      "mrp": 329,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "feeding-bottle",
+        "feeding"
+      ],
+      "description": "Anti-colic feeding bottle.",
+      "trust_facts": [
+        {
+          "fact_id": "baby_bottle_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, sealed pack"
+        },
+        {
+          "fact_id": "baby_bottle_01_expi",
+          "type": "expiry",
+          "label": "BPA-free certified"
+        },
+        {
+          "fact_id": "baby_bottle_01_retu",
+          "type": "return",
+          "label": "Easy return if unopened"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_melatonin_gummies_01",
+      "name": "Melatonin Sleep Gummies",
+      "category_id": "pharma",
+      "unit": "30 ct",
+      "price": 449,
+      "mrp": 499,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "melatonin",
+        "sleep",
+        "wellness"
+      ],
+      "description": "Melatonin gummies for occasional sleeplessness.",
+      "trust_facts": [
+        {
+          "fact_id": "melatonin_gummies_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "melatonin_gummies_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Dec 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 505
+      },
+      "deal": {
+        "label": "10% OFF",
+        "lowest_30d": true
+      }
+    },
+    {
+      "sku_id": "sku_paracetamol_01",
+      "name": "Paracetamol Tablets",
+      "category_id": "pharma",
+      "unit": "10 ct",
+      "price": 20,
+      "mrp": 22,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "paracetamol",
+        "medicine"
+      ],
+      "description": "Standard paracetamol tablets.",
+      "trust_facts": [
+        {
+          "fact_id": "paracetamol_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "paracetamol_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jan 2028"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_multivitamin_01",
+      "name": "Daily Multivitamin",
+      "category_id": "pharma",
+      "unit": "30 ct",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "multivitamin",
+        "wellness"
+      ],
+      "description": "Daily multivitamin and mineral tablets.",
+      "trust_facts": [
+        {
+          "fact_id": "multivitamin_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "multivitamin_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Nov 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_bandaid_01",
+      "name": "Adhesive Bandages",
+      "category_id": "pharma",
+      "unit": "20 pc",
+      "price": 45,
+      "mrp": 50,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "bandage",
+        "first-aid"
+      ],
+      "description": "Waterproof adhesive bandages.",
+      "trust_facts": [
+        {
+          "fact_id": "bandaid_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "bandaid_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2029"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_antiseptic_liquid_01",
+      "name": "Antiseptic Liquid",
+      "category_id": "pharma",
+      "unit": "100 ml",
+      "price": 65,
+      "mrp": 70,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "antiseptic",
+        "first-aid"
+      ],
+      "description": "General purpose antiseptic liquid.",
+      "trust_facts": [
+        {
+          "fact_id": "antiseptic_liquid_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "antiseptic_liquid_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2028"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_cough_syrup_01",
+      "name": "Cough Syrup",
+      "category_id": "pharma",
+      "unit": "100 ml",
+      "price": 110,
+      "mrp": 120,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cough-syrup",
+        "medicine"
+      ],
+      "description": "Herbal cough relief syrup.",
+      "trust_facts": [
+        {
+          "fact_id": "cough_syrup_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "cough_syrup_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Oct 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_hand_sanitizer_01",
+      "name": "Hand Sanitizer",
+      "category_id": "pharma",
+      "unit": "100 ml",
+      "price": 60,
+      "mrp": 65,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "sanitizer",
+        "hygiene"
+      ],
+      "description": "70% alcohol-based hand sanitizer.",
+      "trust_facts": [
+        {
+          "fact_id": "hand_sanitizer_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "hand_sanitizer_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jun 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_thermometer_01",
+      "name": "Digital Thermometer",
+      "category_id": "pharma",
+      "unit": "1 pc",
+      "price": 249,
+      "mrp": 279,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "thermometer",
+        "device"
+      ],
+      "description": "Fast-read digital thermometer.",
+      "trust_facts": [
+        {
+          "fact_id": "thermometer_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "thermometer_01_expi",
+          "type": "expiry",
+          "label": "1-yr warranty on device"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 280
+      }
+    },
+    {
+      "sku_id": "sku_omega3_01",
+      "name": "Omega-3 Fish Oil Capsules",
+      "category_id": "pharma",
+      "unit": "60 ct",
+      "price": 449,
+      "mrp": 499,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "omega-3",
+        "supplement"
+      ],
+      "description": "Fish oil capsules for heart and joint health.",
+      "trust_facts": [
+        {
+          "fact_id": "omega3_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "omega3_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Sep 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_electrolyte_powder_01",
+      "name": "Oral Electrolyte Powder Sachet",
+      "category_id": "pharma",
+      "unit": "1 pc",
+      "price": 15,
+      "mrp": 18,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "electrolyte",
+        "hydration"
+      ],
+      "description": "WHO-formula oral rehydration sachet.",
+      "trust_facts": [
+        {
+          "fact_id": "electrolyte_powder_01_auth",
+          "type": "authenticity",
+          "label": "100% authentic, licensed seller"
+        },
+        {
+          "fact_id": "electrolyte_powder_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Aug 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_charger_usbc_01",
+      "name": "20W USB-C Fast Charger",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 799,
+      "mrp": 999,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "charger",
+        "usb-c",
+        "fast-charging"
+      ],
+      "description": "20W PD fast charger, works with most phones.",
+      "trust_facts": [
+        {
+          "fact_id": "charger_usbc_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with USB-C phones (check model)"
+        },
+        {
+          "fact_id": "charger_usbc_01_warr",
+          "type": "warranty",
+          "label": "1-yr manufacturer warranty"
+        },
+        {
+          "fact_id": "charger_usbc_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_charging_cable_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 895
+      },
+      "deal": {
+        "label": "20% OFF",
+        "lowest_30d": true
+      }
+    },
+    {
+      "sku_id": "sku_charging_cable_01",
+      "name": "USB-C to USB-C Cable",
+      "category_id": "electronics",
+      "unit": "1 m",
+      "price": 299,
+      "mrp": 349,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cable",
+        "usb-c"
+      ],
+      "description": "Braided USB-C to USB-C cable.",
+      "trust_facts": [
+        {
+          "fact_id": "charging_cable_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with USB-C devices"
+        },
+        {
+          "fact_id": "charging_cable_01_warr",
+          "type": "warranty",
+          "label": "6-month warranty"
+        },
+        {
+          "fact_id": "charging_cable_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_charger_usbc_01"
+      ]
+    },
+    {
+      "sku_id": "sku_earphones_01",
+      "name": "Wired Earphones with Mic",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 399,
+      "mrp": 449,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "earphones",
+        "audio"
+      ],
+      "description": "3.5mm wired earphones with inline mic.",
+      "trust_facts": [
+        {
+          "fact_id": "earphones_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with 3.5mm jack devices"
+        },
+        {
+          "fact_id": "earphones_01_warr",
+          "type": "warranty",
+          "label": "6-month warranty"
+        },
+        {
+          "fact_id": "earphones_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_powerbank_01",
+      "name": "10000mAh Power Bank",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 999,
+      "mrp": 1199,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "powerbank",
+        "charging"
+      ],
+      "description": "Compact 10000mAh dual-output power bank.",
+      "trust_facts": [
+        {
+          "fact_id": "powerbank_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with USB-A and USB-C output"
+        },
+        {
+          "fact_id": "powerbank_01_warr",
+          "type": "warranty",
+          "label": "1-yr manufacturer warranty"
+        },
+        {
+          "fact_id": "powerbank_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_charging_cable_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 1120
+      }
+    },
+    {
+      "sku_id": "sku_bulb_smart_01",
+      "name": "Smart LED Bulb",
+      "category_id": "electronics",
+      "unit": "9 W",
+      "price": 449,
+      "mrp": 499,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "smart-bulb",
+        "led",
+        "home"
+      ],
+      "description": "Wi-Fi enabled dimmable smart bulb.",
+      "trust_facts": [
+        {
+          "fact_id": "bulb_smart_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with 2.4GHz Wi-Fi"
+        },
+        {
+          "fact_id": "bulb_smart_01_warr",
+          "type": "warranty",
+          "label": "1-yr manufacturer warranty"
+        },
+        {
+          "fact_id": "bulb_smart_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_extension_board_01",
+      "name": "4-Socket Extension Board",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "extension-board",
+        "electrical"
+      ],
+      "description": "Surge-protected 4-socket extension board.",
+      "trust_facts": [
+        {
+          "fact_id": "extension_board_01_comp",
+          "type": "compatibility",
+          "label": "ISI-marked, surge protected"
+        },
+        {
+          "fact_id": "extension_board_01_warr",
+          "type": "warranty",
+          "label": "1-yr manufacturer warranty"
+        },
+        {
+          "fact_id": "extension_board_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_batteries_aa_01",
+      "name": "AA Batteries",
+      "category_id": "electronics",
+      "unit": "4 pc",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "batteries",
+        "aa"
+      ],
+      "description": "Long-life alkaline AA batteries.",
+      "trust_facts": [
+        {
+          "fact_id": "batteries_aa_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with standard AA devices"
+        },
+        {
+          "fact_id": "batteries_aa_01_warr",
+          "type": "warranty",
+          "label": "Expiry: 2030"
+        },
+        {
+          "fact_id": "batteries_aa_01_retu",
+          "type": "return",
+          "label": ""
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_phone_stand_01",
+      "name": "Adjustable Phone Stand",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 249,
+      "mrp": 279,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "phone-stand",
+        "accessory"
+      ],
+      "description": "Foldable adjustable-angle phone stand.",
+      "trust_facts": [
+        {
+          "fact_id": "phone_stand_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with all phone sizes"
+        },
+        {
+          "fact_id": "phone_stand_01_warr",
+          "type": "warranty",
+          "label": "6-month warranty"
+        },
+        {
+          "fact_id": "phone_stand_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_led_torch_01",
+      "name": "Rechargeable LED Torch",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "torch",
+        "led",
+        "emergency"
+      ],
+      "description": "USB-rechargeable high-beam LED torch.",
+      "trust_facts": [
+        {
+          "fact_id": "led_torch_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with USB-A charging"
+        },
+        {
+          "fact_id": "led_torch_01_warr",
+          "type": "warranty",
+          "label": "1-yr manufacturer warranty"
+        },
+        {
+          "fact_id": "led_torch_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_earbuds_case_01",
+      "name": "Wireless Earbuds Case",
+      "category_id": "electronics",
+      "unit": "1 pc",
+      "price": 1499,
+      "mrp": 1799,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "earbuds",
+        "audio",
+        "wireless"
+      ],
+      "description": "Bluetooth 5.3 wireless earbuds with charging case.",
+      "trust_facts": [
+        {
+          "fact_id": "earbuds_case_01_comp",
+          "type": "compatibility",
+          "label": "Compatible with Bluetooth 5.0+"
+        },
+        {
+          "fact_id": "earbuds_case_01_warr",
+          "type": "warranty",
+          "label": "1-yr manufacturer warranty"
+        },
+        {
+          "fact_id": "earbuds_case_01_retu",
+          "type": "return",
+          "label": "7-day easy return"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 1680
+      },
+      "deal": {
+        "label": "17% OFF",
+        "lowest_30d": false
+      }
+    },
+    {
+      "sku_id": "sku_party_supplies_set_01",
+      "name": "Birthday Party Supplies Set",
+      "category_id": "party_gifting",
+      "unit": "1 set",
+      "price": 399,
+      "mrp": 499,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "party",
+        "birthday",
+        "balloons",
+        "streamers"
+      ],
+      "description": "Balloons, streamers and candles combo set for a birthday party.",
+      "trust_facts": [
+        {
+          "fact_id": "party_supplies_set_01_quan",
+          "type": "quantity",
+          "label": "Set covers up to 10 guests"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_candles_bday_01",
+        "sku_balloons_01",
+        "sku_confetti_01"
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 445
+      },
+      "deal": {
+        "label": "20% OFF",
+        "lowest_30d": true
+      }
+    },
+    {
+      "sku_id": "sku_candles_bday_01",
+      "name": "Birthday Candles",
+      "category_id": "party_gifting",
+      "unit": "10 pc",
+      "price": 49,
+      "mrp": 55,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "candles",
+        "birthday"
+      ],
+      "description": "Number and stick birthday candles.",
+      "trust_facts": [
+        {
+          "fact_id": "candles_bday_01_quan",
+          "type": "quantity",
+          "label": "Pack of 10"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_party_supplies_set_01"
+      ]
+    },
+    {
+      "sku_id": "sku_balloons_01",
+      "name": "Latex Balloons",
+      "category_id": "party_gifting",
+      "unit": "50 pc",
+      "price": 99,
+      "mrp": 115,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "balloons",
+        "party"
+      ],
+      "description": "Assorted-color latex balloons.",
+      "trust_facts": [
+        {
+          "fact_id": "balloons_01_quan",
+          "type": "quantity",
+          "label": "Pack of 50"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_party_supplies_set_01"
+      ]
+    },
+    {
+      "sku_id": "sku_gift_wrap_01",
+      "name": "Gift Wrapping Paper Roll",
+      "category_id": "party_gifting",
+      "unit": "1 roll",
+      "price": 79,
+      "mrp": 89,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "gift-wrap",
+        "gifting"
+      ],
+      "description": "Glossy gift wrapping paper roll.",
+      "trust_facts": [
+        {
+          "fact_id": "gift_wrap_01_quan",
+          "type": "quantity",
+          "label": "5m roll"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_greeting_card_01",
+      "name": "Greeting Card",
+      "category_id": "party_gifting",
+      "unit": "1 pc",
+      "price": 59,
+      "mrp": 65,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "greeting-card",
+        "gifting"
+      ],
+      "description": "Printed greeting card with envelope.",
+      "trust_facts": [
+        {
+          "fact_id": "greeting_card_01_quan",
+          "type": "quantity",
+          "label": "Single card with envelope"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_party_hats_01",
+      "name": "Party Hats",
+      "category_id": "party_gifting",
+      "unit": "6 pc",
+      "price": 69,
+      "mrp": 79,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "party-hats",
+        "birthday"
+      ],
+      "description": "Cone party hats, assorted colors.",
+      "trust_facts": [
+        {
+          "fact_id": "party_hats_01_quan",
+          "type": "quantity",
+          "label": "Pack of 6"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_party_supplies_set_01"
+      ]
+    },
+    {
+      "sku_id": "sku_confetti_01",
+      "name": "Confetti Poppers",
+      "category_id": "party_gifting",
+      "unit": "2 pc",
+      "price": 89,
+      "mrp": 99,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "confetti",
+        "party"
+      ],
+      "description": "Push-pop confetti poppers.",
+      "trust_facts": [
+        {
+          "fact_id": "confetti_01_quan",
+          "type": "quantity",
+          "label": "Pack of 2"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_party_supplies_set_01"
+      ]
+    },
+    {
+      "sku_id": "sku_chocolate_gift_box_01",
+      "name": "Assorted Chocolate Gift Box",
+      "category_id": "party_gifting",
+      "unit": "1 box",
+      "price": 349,
+      "mrp": 399,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "chocolate",
+        "gifting"
+      ],
+      "description": "Assorted chocolate box for gifting.",
+      "trust_facts": [
+        {
+          "fact_id": "chocolate_gift_box_01_quan",
+          "type": "quantity",
+          "label": "Box of 16 pieces"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_disposable_plates_01",
+      "name": "Disposable Paper Plates",
+      "category_id": "party_gifting",
+      "unit": "10 pc",
+      "price": 65,
+      "mrp": 72,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "plates",
+        "party"
+      ],
+      "description": "Sturdy disposable paper plates.",
+      "trust_facts": [
+        {
+          "fact_id": "disposable_plates_01_quan",
+          "type": "quantity",
+          "label": "Pack of 10"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": [
+        "sku_party_supplies_set_01"
+      ]
+    },
+    {
+      "sku_id": "sku_ribbon_roll_01",
+      "name": "Decorative Ribbon Roll",
+      "category_id": "party_gifting",
+      "unit": "1 roll",
+      "price": 49,
+      "mrp": 55,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "ribbon",
+        "gifting"
+      ],
+      "description": "Satin decorative ribbon roll.",
+      "trust_facts": [
+        {
+          "fact_id": "ribbon_roll_01_quan",
+          "type": "quantity",
+          "label": "10m roll"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_dog_food_01",
+      "name": "Dry Dog Food",
+      "category_id": "pet",
+      "unit": "1 kg",
+      "price": 349,
+      "mrp": 389,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "dog-food",
+        "pet"
+      ],
+      "description": "Balanced nutrition dry dog food.",
+      "trust_facts": [
+        {
+          "fact_id": "dog_food_01_ingr",
+          "type": "ingredient",
+          "label": "Chicken-based protein, no fillers"
+        },
+        {
+          "fact_id": "dog_food_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_cat_food_01",
+      "name": "Dry Cat Food",
+      "category_id": "pet",
+      "unit": "1 kg",
+      "price": 399,
+      "mrp": 449,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cat-food",
+        "pet"
+      ],
+      "description": "Balanced nutrition dry cat food.",
+      "trust_facts": [
+        {
+          "fact_id": "cat_food_01_ingr",
+          "type": "ingredient",
+          "label": "Fish-based protein, no fillers"
+        },
+        {
+          "fact_id": "cat_food_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Feb 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pet_treats_01",
+      "name": "Pet Training Treats",
+      "category_id": "pet",
+      "unit": "100 g",
+      "price": 149,
+      "mrp": 165,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pet-treats",
+        "training"
+      ],
+      "description": "Soft training treats for dogs.",
+      "trust_facts": [
+        {
+          "fact_id": "pet_treats_01_ingr",
+          "type": "ingredient",
+          "label": "Single-protein source"
+        },
+        {
+          "fact_id": "pet_treats_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Nov 2026"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pet_shampoo_01",
+      "name": "Pet Shampoo",
+      "category_id": "pet",
+      "unit": "200 ml",
+      "price": 249,
+      "mrp": 275,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pet-shampoo",
+        "grooming"
+      ],
+      "description": "Gentle pH-balanced pet shampoo.",
+      "trust_facts": [
+        {
+          "fact_id": "pet_shampoo_01_ingr",
+          "type": "ingredient",
+          "label": "Soap-free, tearless formula"
+        },
+        {
+          "fact_id": "pet_shampoo_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Aug 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_litter_01",
+      "name": "Cat Litter",
+      "category_id": "pet",
+      "unit": "2 kg",
+      "price": 299,
+      "mrp": 329,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "cat-litter",
+        "pet"
+      ],
+      "description": "Clumping, odor-control cat litter.",
+      "trust_facts": [
+        {
+          "fact_id": "litter_01_ingr",
+          "type": "ingredient",
+          "label": "Bentonite clay, low dust"
+        },
+        {
+          "fact_id": "litter_01_expi",
+          "type": "expiry",
+          "label": "Expiry: N/A"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pet_toy_01",
+      "name": "Chew Toy for Dogs",
+      "category_id": "pet",
+      "unit": "1 pc",
+      "price": 199,
+      "mrp": 225,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pet-toy",
+        "chew"
+      ],
+      "description": "Durable rubber chew toy.",
+      "trust_facts": [
+        {
+          "fact_id": "pet_toy_01_ingr",
+          "type": "ingredient",
+          "label": "Non-toxic rubber"
+        },
+        {
+          "fact_id": "pet_toy_01_expi",
+          "type": "expiry",
+          "label": "N/A"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pet_bowl_01",
+      "name": "Stainless Steel Pet Bowl",
+      "category_id": "pet",
+      "unit": "1 pc",
+      "price": 249,
+      "mrp": 279,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pet-bowl",
+        "feeding"
+      ],
+      "description": "Anti-skid stainless steel pet bowl.",
+      "trust_facts": [
+        {
+          "fact_id": "pet_bowl_01_ingr",
+          "type": "ingredient",
+          "label": "Food-grade steel"
+        },
+        {
+          "fact_id": "pet_bowl_01_expi",
+          "type": "expiry",
+          "label": "N/A"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_pet_leash_01",
+      "name": "Nylon Pet Leash",
+      "category_id": "pet",
+      "unit": "1 pc",
+      "price": 299,
+      "mrp": 329,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "pet-leash",
+        "walking"
+      ],
+      "description": "Strong nylon walking leash.",
+      "trust_facts": [
+        {
+          "fact_id": "pet_leash_01_ingr",
+          "type": "ingredient",
+          "label": "Rated up to 40kg pull"
+        },
+        {
+          "fact_id": "pet_leash_01_expi",
+          "type": "expiry",
+          "label": "N/A"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_bird_seed_01",
+      "name": "Mixed Bird Seed",
+      "category_id": "pet",
+      "unit": "500 g",
+      "price": 129,
+      "mrp": 145,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "bird-seed",
+        "pet"
+      ],
+      "description": "Mixed seed blend for pet birds.",
+      "trust_facts": [
+        {
+          "fact_id": "bird_seed_01_ingr",
+          "type": "ingredient",
+          "label": "No artificial additives"
+        },
+        {
+          "fact_id": "bird_seed_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Jan 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    },
+    {
+      "sku_id": "sku_fish_food_01",
+      "name": "Fish Feed Flakes",
+      "category_id": "pet",
+      "unit": "50 g",
+      "price": 99,
+      "mrp": 110,
+      "veg": true,
+      "image": null,
+      "tags": [
+        "fish-food",
+        "pet"
+      ],
+      "description": "Nutrient-rich flake food for aquarium fish.",
+      "trust_facts": [
+        {
+          "fact_id": "fish_food_01_ingr",
+          "type": "ingredient",
+          "label": "Balanced flake formula"
+        },
+        {
+          "fact_id": "fish_food_01_expi",
+          "type": "expiry",
+          "label": "Expiry: Mar 2027"
+        }
+      ],
+      "out_of_stock": false,
+      "complements": []
+    }
+  ]
+}

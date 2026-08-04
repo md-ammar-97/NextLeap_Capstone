@@ -1,0 +1,21 @@
+{
+  "persona_id": "priya",
+  "display_name": "Priya",
+  "framing": "trust",
+  "history_category_ids": [
+    "staples",
+    "dairy",
+    "snacks",
+    "household"
+  ],
+  "order_again_sku_ids": [
+    "sku_milk_01",
+    "sku_atta_ww_01",
+    "sku_toor_dal_01",
+    "sku_curd_01",
+    "sku_chips_classic_01",
+    "sku_dishwash_liquid_01",
+    "sku_rice_basmati_01",
+    "sku_butter_01"
+  ]
+}
