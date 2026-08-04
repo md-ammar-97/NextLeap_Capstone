@@ -22,10 +22,17 @@ and the build sequence in [`docs/implementation_plan.md`](docs/implementation_pl
 - After any redeploy this close to judging, re-run `python scripts/prewarm_demo.py`
   (see below) — the copilot's suggestion cache is in-memory and wiped on
   every deploy.
-- Mobile Lighthouse (production, `/`): Performance 78, LCP 2.4s, CLS 0,
-  FCP 1.1s as of the initial deploy pass. TBT (~800ms) is the main drag —
-  see `docs/update.md` U5 for the planned fix; number above updates once
-  that lands.
+- Mobile Lighthouse (production, `/`): Performance 79, LCP 2.3s, CLS 0,
+  FCP 1.1s. After U5's LazyMotion migration, homepage JS dropped ~19%
+  (793KB→651KB uncompressed across chunks) — confirmed the code-split
+  actually took effect — but TBT stayed flat (~800-820ms) and the
+  Performance score barely moved (78→79). The blocking cost isn't
+  framer-motion; it's most likely React hydration + parsing the bundled
+  120-SKU catalog JSON on every page load, which would need a bigger
+  change (server-rendering more of the page, or lazy-loading catalog
+  slices) than fits this pass. Stopping here per the "fix the largest
+  offenders, don't chase perfection on a prototype" guidance — CLS and FCP
+  are both comfortably within budget regardless.
 
 ## Repo layout
 
