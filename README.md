@@ -13,12 +13,15 @@ and the build sequence in [`docs/implementation_plan.md`](docs/implementation_pl
 
 - Frontend: https://instamart-copilot.vercel.app
 - Backend: https://instamart-copilot-api.onrender.com (`/health`, `/copilot`, `/events`, `/metrics/{session_id}`)
-- Render is currently on the **Starter** plan. ⚠ **Action needed before judging**:
-  upgrade to **Standard ($25/mo)** in the Render dashboard (`instamart-copilot-api`
-  → Settings → Instance Type) — no MCP/API tool can change an existing
-  service's plan, this has to be done by hand. Either plan avoids free-tier
-  cold-start/sleep behavior, so the pinger in `docs/implementation_plan.md`
-  §5.9 isn't needed regardless.
+- Render is on the **Starter** plan — sufficient as-is, no upgrade needed.
+  Only Render's free tier sleeps/cold-starts; Starter and Standard both stay
+  warm, so the pinger in `docs/implementation_plan.md` §5.9 isn't needed on
+  either. Standard's extra RAM/CPU isn't a functional requirement here —
+  this backend's own compute is trivial (a few SQLite writes, an in-memory
+  dict cache); the 800ms–1.2s latencies observed all session are Groq's
+  response time, not server strain. Upgrading is a headroom choice, not a
+  blocker — worth it only if judging traffic turns out heavier than a
+  handful of people testing sequentially.
 - After any redeploy this close to judging, re-run `python scripts/prewarm_demo.py`
   (see below) — the copilot's suggestion cache is in-memory and wiped on
   every deploy.
