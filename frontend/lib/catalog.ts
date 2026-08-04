@@ -85,13 +85,45 @@ export function discountPct(sku: Sku): number {
   return Math.round(((sku.mrp - sku.price) / sku.mrp) * 100);
 }
 
+/** U1 (docs/update.md): token-AND matching, not a single-substring test —
+ * a naive substring match would fail the search's own mandated demo query
+ * ("micellar water" is not a contiguous substring of "Micellar Cleansing
+ * Water" / tag "micellar-water"). Falls back to a whitespace-stripped
+ * contiguous match only if the primary pass finds nothing, which is what
+ * makes "garlicbread" find "Baker's Dozen Garlic Bread". */
 export function searchSkus(query: string): Sku[] {
   const q = query.trim().toLowerCase();
   if (!q) return [];
-  return SKUS.filter(
-    (s) =>
-      s.name.toLowerCase().includes(q) ||
-      s.tags.some((t) => t.toLowerCase().includes(q)) ||
-      s.category_id.toLowerCase().includes(q)
-  );
+  const tokens = q.split(/\s+/).filter(Boolean);
+  const qNoSpace = q.replace(/\s+/g, "");
+
+  function corpusFor(sku: Sku): string {
+    const category = getCategoryById(sku.category_id);
+    const raw = [sku.name, sku.tags.join(" "), category?.name ?? ""].join(" ").toLowerCase();
+    return `${raw} ${raw.replace(/-/g, " ")}`;
+  }
+
+  let matches = SKUS.filter((s) => {
+    const corpus = corpusFor(s);
+    return tokens.every((t) => corpus.includes(t));
+  });
+
+  if (matches.length === 0) {
+    matches = SKUS.filter((s) => corpusFor(s).replace(/[\s-]+/g, "").includes(qNoSpace));
+  }
+
+  // Relevance tier: exact name < name contains query < tag match < category-name-only
+  // match. Without this, a query that happens to substring-match a category
+  // name (e.g. "atta" inside "Atta, Rice & Dal") floods results with every
+  // SKU in that category instead of surfacing the actual atta SKU first.
+  function tier(s: Sku): number {
+    const name = s.name.toLowerCase();
+    if (name === q) return 0;
+    if (name.includes(q)) return 1;
+    const tagsBlob = s.tags.join(" ").toLowerCase().replace(/-/g, " ");
+    if (tokens.every((t) => tagsBlob.includes(t))) return 2;
+    return 3;
+  }
+
+  return matches.sort((a, b) => tier(a) - tier(b));
 }

@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 import { fnv1a, nanoid } from "./hash";
 import personasData from "./personas-data.json";
+import { postEvents } from "./api";
 
 export type CartLine = { sku_id: string; qty: number };
 
@@ -9,6 +10,7 @@ interface CartState {
   lines: CartLine[];
   dismissed_sku_ids: string[];
   module_dismissed_hashes: string[];
+  suggested_origin_sku_ids: string[];
   addToCart: (skuId: string, qty?: number) => void;
   removeFromCart: (skuId: string) => void;
   setQty: (skuId: string, qty: number) => void;
@@ -16,7 +18,22 @@ interface CartState {
   dismissSku: (skuId: string) => void;
   dismissModuleForCurrentHash: () => void;
   resetDismissed: () => void;
+  markSuggestedOrigin: (skuId: string) => void;
   cartHash: () => string;
+}
+
+/** U3 (docs/update.md): fires suggestion_removed for a cart line that
+ * originated from a copilot suggestion. Hash is captured *before* removal
+ * so it reflects the basket state the removal actually happened from. */
+function logSuggestionRemoved(skuId: string, hashBeforeRemoval: string) {
+  postEvents([
+    {
+      session_id: useSessionStore.getState().sessionId,
+      ts: new Date().toISOString(),
+      type: "suggestion_removed",
+      payload: { sku_id: skuId, cart_hash: hashBeforeRemoval },
+    },
+  ]);
 }
 
 const MAX_QTY = 10;
@@ -27,6 +44,7 @@ export const useCartStore = create<CartState>()(
       lines: [],
       dismissed_sku_ids: [],
       module_dismissed_hashes: [],
+      suggested_origin_sku_ids: [],
       addToCart: (skuId, qty = 1) =>
         set((state) => {
           const existing = state.lines.find((l) => l.sku_id === skuId);
@@ -40,11 +58,25 @@ export const useCartStore = create<CartState>()(
           return { lines: [...state.lines, { sku_id: skuId, qty: Math.min(MAX_QTY, qty) }] };
         }),
       removeFromCart: (skuId) =>
-        set((state) => ({ lines: state.lines.filter((l) => l.sku_id !== skuId) })),
+        set((state) => {
+          if (state.suggested_origin_sku_ids.includes(skuId)) {
+            logSuggestionRemoved(skuId, get().cartHash());
+          }
+          return {
+            lines: state.lines.filter((l) => l.sku_id !== skuId),
+            suggested_origin_sku_ids: state.suggested_origin_sku_ids.filter((id) => id !== skuId),
+          };
+        }),
       setQty: (skuId, qty) =>
         set((state) => {
           if (qty <= 0) {
-            return { lines: state.lines.filter((l) => l.sku_id !== skuId) };
+            if (state.suggested_origin_sku_ids.includes(skuId)) {
+              logSuggestionRemoved(skuId, get().cartHash());
+            }
+            return {
+              lines: state.lines.filter((l) => l.sku_id !== skuId),
+              suggested_origin_sku_ids: state.suggested_origin_sku_ids.filter((id) => id !== skuId),
+            };
           }
           return {
             lines: state.lines.map((l) =>
@@ -52,7 +84,13 @@ export const useCartStore = create<CartState>()(
             ),
           };
         }),
-      clearCart: () => set({ lines: [] }),
+      clearCart: () => set({ lines: [], suggested_origin_sku_ids: [] }),
+      markSuggestedOrigin: (skuId) =>
+        set((state) => ({
+          suggested_origin_sku_ids: state.suggested_origin_sku_ids.includes(skuId)
+            ? state.suggested_origin_sku_ids
+            : [...state.suggested_origin_sku_ids, skuId],
+        })),
       dismissSku: (skuId) =>
         set((state) => ({
           dismissed_sku_ids: state.dismissed_sku_ids.includes(skuId)

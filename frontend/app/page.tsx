@@ -37,10 +37,10 @@ export default function HomePage() {
         </div>
         <p className="text-[11px] text-white/70 mt-0.5">Delivery in 12 minutes</p>
 
-        <div className="mt-3 flex items-center gap-2 bg-white rounded-[var(--r-pill)] px-3.5 py-2.5">
+        <Link href="/search" className="mt-3 flex items-center gap-2 bg-white rounded-[var(--r-pill)] px-3.5 py-2.5">
           <Search size={16} className="text-[var(--ink-500)]" />
           <span className="text-[13px] text-[var(--ink-500)]">Search for &ldquo;atta&rdquo;&hellip;</span>
-        </div>
+        </Link>
       </header>
 
       <section className="mt-4 px-4">

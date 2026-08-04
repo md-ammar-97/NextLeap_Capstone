@@ -131,6 +131,7 @@ export function MissionModule() {
               key={s.sku_id}
               suggestion={s}
               sessionId={sessionId}
+              cartHash={currentHash}
               onOpen={() => {
                 postEvents([
                   {
@@ -154,17 +155,20 @@ export function MissionModule() {
 function SuggestionCard({
   suggestion,
   sessionId,
+  cartHash,
   onOpen,
   onNotRelevant,
 }: {
   suggestion: Suggestion;
   sessionId: string;
+  cartHash: string;
   onOpen: () => void;
   onNotRelevant: () => void;
 }) {
   const sku = getSkuById(suggestion.sku_id);
   const addToCart = useCartStore((s) => s.addToCart);
   const setQty = useCartStore((s) => s.setQty);
+  const markSuggestedOrigin = useCartStore((s) => s.markSuggestedOrigin);
   const line = useCartStore((s) => s.lines.find((l) => l.sku_id === suggestion.sku_id));
   const qty = line?.qty ?? 0;
 
@@ -176,7 +180,7 @@ function SuggestionCard({
         session_id: sessionId,
         ts: new Date().toISOString(),
         type: "suggestion_added",
-        payload: { sku_id: sku!.sku_id, is_new_category: suggestion.is_new_category },
+        payload: { sku_id: sku!.sku_id, is_new_category: suggestion.is_new_category, cart_hash: cartHash },
       },
     ]);
   }
@@ -211,6 +215,7 @@ function SuggestionCard({
           size="sm"
           onAdd={() => {
             addToCart(sku.sku_id, 1);
+            markSuggestedOrigin(sku.sku_id);
             logAdded();
           }}
           onIncrement={() => setQty(sku.sku_id, qty + 1)}
