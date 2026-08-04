@@ -3470,7 +3470,7 @@
           "label": "7-day easy return"
         }
       ],
-      "out_of_stock": false,
+      "out_of_stock": true,
       "complements": [],
       "anchor_price": {
         "retailer": "Amazon",

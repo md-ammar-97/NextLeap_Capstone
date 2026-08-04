@@ -169,12 +169,20 @@ export const useLocationStore = create<LocationState>()(
 
 interface SessionState {
   sessionId: string;
+  nudgeShownThisSession: boolean;
+  markNudgeShown: () => void;
 }
 
 export const useSessionStore = create<SessionState>()(
   persist(
-    () => ({
+    (set) => ({
       sessionId: `s_${nanoid()}`,
+      // sessionStorage-backed/per-tab, matching sessionId's own scope — a
+      // second tab should get its own shot at the nudge, unlike a
+      // localStorage flag which would wrongly suppress it there too
+      // (docs/update.md U4).
+      nudgeShownThisSession: false,
+      markNudgeShown: () => set({ nudgeShownThisSession: true }),
     }),
     { name: "im-session", storage: createJSONStorage(() => sessionStorage) }
   )

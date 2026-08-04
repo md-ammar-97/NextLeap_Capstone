@@ -7,6 +7,7 @@ import { searchSkus } from "@/lib/catalog";
 import { useUIStore } from "@/lib/store";
 import { ProductCard } from "@/components/ProductCard";
 import { CartBar } from "@/components/CartBar";
+import { MissionNudgeSheet } from "@/components/MissionNudgeSheet";
 
 const HINTS = ["Search for “atta”…", "“charger”…", "“micellar water”…"];
 
@@ -77,6 +78,7 @@ export default function SearchPage() {
       )}
 
       <CartBar />
+      <MissionNudgeSheet />
     </div>
   );
 }

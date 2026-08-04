@@ -9,6 +9,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { PromoCarousel } from "@/components/PromoCarousel";
 import { CartBar } from "@/components/CartBar";
 import { PersonaToggle } from "@/components/PersonaToggle";
+import { MissionNudgeSheet } from "@/components/MissionNudgeSheet";
 
 export default function HomePage() {
   const personaId = usePersonaStore((s) => s.personaId);
@@ -80,6 +81,7 @@ export default function HomePage() {
       )}
 
       <CartBar />
+      <MissionNudgeSheet />
     </div>
   );
 }

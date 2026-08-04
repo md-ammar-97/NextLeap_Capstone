@@ -7,6 +7,7 @@ import { CATEGORIES, getCategoryById, getSkusByCategory } from "@/lib/catalog";
 import { useUIStore } from "@/lib/store";
 import { ProductCard } from "@/components/ProductCard";
 import { CartBar } from "@/components/CartBar";
+import { MissionNudgeSheet } from "@/components/MissionNudgeSheet";
 
 export default function ListingPage() {
   const params = useParams<{ cat: string }>();
@@ -49,6 +50,7 @@ export default function ListingPage() {
       </div>
 
       <CartBar />
+      <MissionNudgeSheet />
     </div>
   );
 }

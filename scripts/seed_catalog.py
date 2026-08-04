@@ -638,6 +638,16 @@ def build_catalog():
             if deal:
                 sku["deal"] = deal
             skus.append(sku)
+
+    # U7 demo flag (docs/update.md): one SKU deliberately out of stock so
+    # ProductCard/AddStepper's "Sold out" state is reachable in the demo
+    # (docs/edgecases.md #20 — visual/disabled-add half only; the "auto-
+    # remove from cart with a toast" half is intentionally not built, see
+    # the U7 note in the update itself).
+    for sku in skus:
+        if sku["sku_id"] == "sku_earbuds_case_01":
+            sku["out_of_stock"] = True
+
     return {"categories": categories, "skus": skus}
 
 

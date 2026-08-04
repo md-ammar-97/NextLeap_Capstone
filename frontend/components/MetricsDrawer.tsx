@@ -41,6 +41,10 @@ export function MetricsDrawer() {
   ];
   const max = Math.max(1, ...steps.map((s) => s.value));
   const allZero = steps.every((s) => s.value === 0);
+  // North-star metric per docs/context.md section 6: a session counts as a
+  // category-expansion win only if a new-category item was both added via
+  // the copilot AND the checkout actually completed — not either alone.
+  const categoryExpansionAchieved = newCategoryAdded >= 1 && (counts.order_placed ?? 0) >= 1;
 
   return (
     <BottomSheet open={open} onClose={close} maxHeight="70dvh">
@@ -48,7 +52,19 @@ export function MetricsDrawer() {
         <p className="text-[11px] uppercase tracking-wide text-[var(--ink-500)] mb-1">
           Session instrumentation — not a product surface
         </p>
-        <h2 className="text-[15px] font-bold text-[var(--ink-900)] mb-4">Exploration funnel</h2>
+        <h2 className="text-[15px] font-bold text-[var(--ink-900)] mb-2">Exploration funnel</h2>
+
+        {!loading && (
+          <div
+            className={`mb-4 text-[12px] font-semibold px-3 py-2 rounded-[var(--r-sm)] ${
+              categoryExpansionAchieved
+                ? "bg-[var(--im-green)]/10 text-[var(--im-green)]"
+                : "bg-[var(--bg-soft)] text-[var(--ink-500)]"
+            }`}
+          >
+            Session Category-Expansion: {categoryExpansionAchieved ? "Achieved ✓" : "Not yet"}
+          </div>
+        )}
 
         {loading && <p className="text-[12px] text-[var(--ink-500)]">Loading…</p>}
 
