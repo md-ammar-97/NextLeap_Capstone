@@ -1622,7 +1622,7 @@
       "complements": [],
       "anchor_price": {
         "retailer": "BigBasket",
-        "price": 30
+        "price": 31
       }
     },
     {
@@ -1665,7 +1665,7 @@
       ],
       "anchor_price": {
         "retailer": "BigBasket",
-        "price": 45
+        "price": 42
       }
     },
     {
@@ -1700,7 +1700,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 38
+      }
     },
     {
       "sku_id": "sku_spinach_01",
@@ -1734,7 +1738,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 26
+      }
     },
     {
       "sku_id": "sku_capsicum_01",
@@ -1768,7 +1776,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 38
+      }
     },
     {
       "sku_id": "sku_banana_01",
@@ -1802,7 +1814,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 44
+      }
     },
     {
       "sku_id": "sku_apple_01",
@@ -1837,6 +1853,10 @@
       ],
       "out_of_stock": false,
       "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 160
+      },
       "deal": {
         "label": "11% OFF",
         "lowest_30d": false
@@ -1880,7 +1900,7 @@
       ],
       "anchor_price": {
         "retailer": "BigBasket",
-        "price": 60
+        "price": 62
       }
     },
     {
@@ -1917,7 +1937,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_pasta_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 26
+      }
     },
     {
       "sku_id": "sku_lemon_01",
@@ -1951,7 +1975,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "BigBasket",
+        "price": 22
+      }
     },
     {
       "sku_id": "sku_micellar_water_01",
@@ -1988,8 +2016,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 390
+        "retailer": "Nykaa",
+        "price": 375
       },
       "deal": {
         "label": "13% OFF",
@@ -2028,7 +2056,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 205
+      }
     },
     {
       "sku_id": "sku_sunscreen_01",
@@ -2065,8 +2097,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 505
+        "retailer": "Nykaa",
+        "price": 490
       }
     },
     {
@@ -2101,7 +2133,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 105
+      }
     },
     {
       "sku_id": "sku_shampoo_01",
@@ -2135,7 +2171,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 205
+      }
     },
     {
       "sku_id": "sku_body_lotion_01",
@@ -2169,7 +2209,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 180
+      }
     },
     {
       "sku_id": "sku_face_serum_01",
@@ -2206,8 +2250,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 615
+        "retailer": "Nykaa",
+        "price": 600
       }
     },
     {
@@ -2242,7 +2286,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 165
+      }
     },
     {
       "sku_id": "sku_hand_cream_01",
@@ -2276,7 +2324,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 140
+      }
     },
     {
       "sku_id": "sku_face_mask_sheet_01",
@@ -2310,7 +2362,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Nykaa",
+        "price": 86
+      }
     },
     {
       "sku_id": "sku_diapers_01",
@@ -2346,8 +2402,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 505
+        "retailer": "FirstCry",
+        "price": 465
       }
     },
     {
@@ -2382,7 +2438,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 160
+      }
     },
     {
       "sku_id": "sku_baby_lotion_01",
@@ -2416,7 +2476,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 180
+      }
     },
     {
       "sku_id": "sku_baby_shampoo_01",
@@ -2450,7 +2514,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 180
+      }
     },
     {
       "sku_id": "sku_baby_powder_01",
@@ -2484,7 +2552,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 110
+      }
     },
     {
       "sku_id": "sku_baby_food_cereal_01",
@@ -2520,7 +2592,7 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
+        "retailer": "FirstCry",
         "price": 280
       }
     },
@@ -2556,7 +2628,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 160
+      }
     },
     {
       "sku_id": "sku_baby_soap_01",
@@ -2590,7 +2666,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 69
+      }
     },
     {
       "sku_id": "sku_pacifier_01",
@@ -2624,7 +2704,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 205
+      }
     },
     {
       "sku_id": "sku_baby_bottle_01",
@@ -2658,7 +2742,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "FirstCry",
+        "price": 325
+      }
     },
     {
       "sku_id": "sku_melatonin_gummies_01",
@@ -2690,8 +2778,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 505
+        "retailer": "Tata 1mg",
+        "price": 465
       },
       "deal": {
         "label": "10% OFF",
@@ -2725,7 +2813,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 21
+      }
     },
     {
       "sku_id": "sku_multivitamin_01",
@@ -2754,7 +2846,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 365
+      }
     },
     {
       "sku_id": "sku_bandaid_01",
@@ -2783,7 +2879,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 50
+      }
     },
     {
       "sku_id": "sku_antiseptic_liquid_01",
@@ -2812,7 +2912,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 70
+      }
     },
     {
       "sku_id": "sku_cough_syrup_01",
@@ -2841,7 +2945,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 120
+      }
     },
     {
       "sku_id": "sku_hand_sanitizer_01",
@@ -2870,7 +2978,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 65
+      }
     },
     {
       "sku_id": "sku_thermometer_01",
@@ -2901,8 +3013,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 280
+        "retailer": "Tata 1mg",
+        "price": 270
       }
     },
     {
@@ -2932,7 +3044,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 485
+      }
     },
     {
       "sku_id": "sku_electrolyte_powder_01",
@@ -2961,7 +3077,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Tata 1mg",
+        "price": 16
+      }
     },
     {
       "sku_id": "sku_charger_usbc_01",
@@ -3000,8 +3120,8 @@
         "sku_charging_cable_01"
       ],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 895
+        "retailer": "Amazon",
+        "price": 855
       },
       "deal": {
         "label": "20% OFF",
@@ -3042,7 +3162,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_charger_usbc_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 315
+      }
     },
     {
       "sku_id": "sku_earphones_01",
@@ -3076,7 +3200,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 410
+      }
     },
     {
       "sku_id": "sku_powerbank_01",
@@ -3114,7 +3242,7 @@
         "sku_charging_cable_01"
       ],
       "anchor_price": {
-        "retailer": "BigBasket",
+        "retailer": "Amazon",
         "price": 1120
       }
     },
@@ -3151,7 +3279,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 460
+      }
     },
     {
       "sku_id": "sku_extension_board_01",
@@ -3185,7 +3317,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 385
+      }
     },
     {
       "sku_id": "sku_batteries_aa_01",
@@ -3219,7 +3355,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 145
+      }
     },
     {
       "sku_id": "sku_phone_stand_01",
@@ -3253,7 +3393,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 280
+      }
     },
     {
       "sku_id": "sku_led_torch_01",
@@ -3288,7 +3432,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 365
+      }
     },
     {
       "sku_id": "sku_earbuds_case_01",
@@ -3325,8 +3473,8 @@
       "out_of_stock": false,
       "complements": [],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 1680
+        "retailer": "Amazon",
+        "price": 1620
       },
       "deal": {
         "label": "17% OFF",
@@ -3363,8 +3511,8 @@
         "sku_confetti_01"
       ],
       "anchor_price": {
-        "retailer": "BigBasket",
-        "price": 445
+        "retailer": "Amazon",
+        "price": 415
       },
       "deal": {
         "label": "20% OFF",
@@ -3395,7 +3543,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_party_supplies_set_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 54
+      }
     },
     {
       "sku_id": "sku_balloons_01",
@@ -3421,7 +3573,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_party_supplies_set_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 110
+      }
     },
     {
       "sku_id": "sku_gift_wrap_01",
@@ -3445,7 +3601,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 87
+      }
     },
     {
       "sku_id": "sku_greeting_card_01",
@@ -3469,7 +3629,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 63
+      }
     },
     {
       "sku_id": "sku_party_hats_01",
@@ -3495,7 +3659,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_party_supplies_set_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 73
+      }
     },
     {
       "sku_id": "sku_confetti_01",
@@ -3521,7 +3689,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_party_supplies_set_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 99
+      }
     },
     {
       "sku_id": "sku_chocolate_gift_box_01",
@@ -3545,7 +3717,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 370
+      }
     },
     {
       "sku_id": "sku_disposable_plates_01",
@@ -3571,7 +3747,11 @@
       "out_of_stock": false,
       "complements": [
         "sku_party_supplies_set_01"
-      ]
+      ],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 73
+      }
     },
     {
       "sku_id": "sku_ribbon_roll_01",
@@ -3595,7 +3775,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 48
+      }
     },
     {
       "sku_id": "sku_dog_food_01",
@@ -3624,7 +3808,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 360
+      }
     },
     {
       "sku_id": "sku_cat_food_01",
@@ -3653,7 +3841,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 415
+      }
     },
     {
       "sku_id": "sku_pet_treats_01",
@@ -3682,7 +3874,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 160
+      }
     },
     {
       "sku_id": "sku_pet_shampoo_01",
@@ -3711,7 +3907,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 260
+      }
     },
     {
       "sku_id": "sku_litter_01",
@@ -3740,7 +3940,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 325
+      }
     },
     {
       "sku_id": "sku_pet_toy_01",
@@ -3769,7 +3973,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 205
+      }
     },
     {
       "sku_id": "sku_pet_bowl_01",
@@ -3798,7 +4006,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 270
+      }
     },
     {
       "sku_id": "sku_pet_leash_01",
@@ -3827,7 +4039,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 315
+      }
     },
     {
       "sku_id": "sku_bird_seed_01",
@@ -3856,7 +4072,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 135
+      }
     },
     {
       "sku_id": "sku_fish_food_01",
@@ -3885,7 +4105,11 @@
         }
       ],
       "out_of_stock": false,
-      "complements": []
+      "complements": [],
+      "anchor_price": {
+        "retailer": "Amazon",
+        "price": 110
+      }
     }
   ]
 }
