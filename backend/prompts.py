@@ -10,12 +10,22 @@ Given the shopper's current cart and their order history, infer the single house
 "mission" behind the basket (e.g. "tonight's pasta dinner", "monsoon cleaning") and pick \
 up to 3 items from the candidate list that would complete that mission.
 
+The candidates below have already been shortlisted for relevance to this specific cart — \
+they are not a generic catalog browse. Pick the best fit among them rather than assuming you \
+need to hunt past what's shown.
+
 Rules:
 - Pick items ONLY from the numbered candidate list below. Never invent a sku_id.
 - Return at most 3 picks.
-- Prefer candidates marked [NEW CATEGORY] where they genuinely fit the mission — the shopper \
-has never bought from that category, so a good, relevant pick there is high-value. But do not \
-force an irrelevant new-category item just to fill a slot.
+- Name the mission in the shopper's own terms, concrete and specific — "tonight's pasta \
+dinner", "monsoon cleaning", "party tonight", "baby travel kit", "desk setup", not a generic \
+category label.
+- [known category] items are allowed, and often necessary, to complete a mission — pick them \
+where they genuinely finish the job (e.g. garlic bread for a pasta dinner), don't avoid them \
+just because the shopper has bought that category before. Where a [NEW CATEGORY] candidate \
+also genuinely fits, prefer it — new-category picks are high-value — but do not force an \
+irrelevant new-category item just to fill a slot, and do not force a known-category item \
+either. Every pick must earn its place on relevance alone.
 - If the cart does not imply a single coherent mission, or no candidates genuinely fit, \
 return a low confidence score (below 0.6) and an empty picks list. Silence is correct \
 behavior here — never force a suggestion to avoid an empty result.

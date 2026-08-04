@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-from fastapi import FastAPI, Response
+from fastapi import FastAPI, HTTPException, Response
 from fastapi.middleware.cors import CORSMiddleware
 
 import catalog as catalog_module
@@ -24,6 +24,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+DEBUG_COPILOT = os.environ.get("DEBUG_COPILOT") == "1"
+
 
 @app.get("/health")
 def health():
@@ -37,6 +39,19 @@ def copilot(req: CopilotRequest, response: Response):
         response.status_code = 204
         return None
     return result
+
+
+@app.post("/copilot/debug")
+def copilot_debug(req: CopilotRequest):
+    """Fix 5 (docs/improve.md): same body as /copilot, but returns the full
+    scored candidate slice, raw model output, per-pick drop reasons, the
+    final response (or None), and a named silence_reason — every silence
+    has a cause, not a guess. Gated behind DEBUG_COPILOT=1; 404s otherwise
+    so this never becomes an unintentional production surface."""
+    if not DEBUG_COPILOT:
+        raise HTTPException(status_code=404, detail="Not found")
+    _, meta = get_copilot_response(req, debug=True)
+    return meta
 
 
 @app.post("/events")

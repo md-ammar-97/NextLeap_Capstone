@@ -8,6 +8,8 @@ import hashlib
 import json
 import os
 
+from catalog_enrichment import CATALOG_ENRICHMENT
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHARED = os.path.join(ROOT, "shared")
 
@@ -620,6 +622,7 @@ def build_catalog():
             for i, t in enumerate(types):
                 label = fact_labels[i] if i < len(fact_labels) else ""
                 trust_facts.append({"fact_id": f"{slug}_{t[:4]}", "type": t, "label": label})
+            enrichment = CATALOG_ENRICHMENT.get(sku_id)
             sku = {
                 "sku_id": sku_id,
                 "name": name,
@@ -629,11 +632,13 @@ def build_catalog():
                 "mrp": mrp,
                 "veg": veg,
                 "image": image_map.get(sku_id),  # None -> placeholder tile; see fetch_images.py
-                "tags": tags,
+                # Fix 3 (docs/improve.md): enriched tags/complements override the
+                # tuple's own (thin) values when present — see catalog_enrichment.py.
+                "tags": enrichment["tags"] if enrichment else tags,
                 "description": desc,
                 "trust_facts": trust_facts,
                 "out_of_stock": False,
-                "complements": [f"sku_{c}" for c in complements],
+                "complements": enrichment["complements"] if enrichment else [f"sku_{c}" for c in complements],
             }
             if has_anchor:
                 if cat_id in ANCHOR_RETAILER_BY_CATEGORY:
