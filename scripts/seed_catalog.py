@@ -595,9 +595,22 @@ SKUS_BY_CATEGORY = {
 ],
 }
 
+def _load_image_map() -> dict:
+    """sku_id -> "/img/<slug>.webp" for SKUs fetch_images.py successfully
+    fetched a photo for (see that script's docstring). Missing entries
+    (file doesn't exist yet, or that SKU had no result) simply keep the
+    placeholder-tile rendering — image stays None, not an error."""
+    path = os.path.join(ROOT, "scripts", "image_map.json")
+    if not os.path.exists(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f)
+
+
 def build_catalog():
     categories = CATEGORIES
     trust_type_map = {c["category_id"]: c["trust_template"] for c in categories}
+    image_map = _load_image_map()
     skus = []
     for cat_id, items in SKUS_BY_CATEGORY.items():
         types = trust_type_map[cat_id]
@@ -615,7 +628,7 @@ def build_catalog():
                 "price": price,
                 "mrp": mrp,
                 "veg": veg,
-                "image": None,  # placeholder-tile rendering for all SKUs in this pass; see docs/implementation_plan.md Pre-Flight note
+                "image": image_map.get(sku_id),  # None -> placeholder tile; see fetch_images.py
                 "tags": tags,
                 "description": desc,
                 "trust_facts": trust_facts,

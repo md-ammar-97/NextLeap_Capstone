@@ -2,7 +2,7 @@
 
 import { discountPct, type Sku } from "@/lib/catalog";
 import { useCartStore } from "@/lib/store";
-import { PlaceholderTile } from "./PlaceholderTile";
+import { ProductImage } from "./ProductImage";
 import { AddStepper } from "./AddStepper";
 
 export function ProductCard({ sku, onOpen }: { sku: Sku; onOpen?: (skuId: string) => void }) {
@@ -19,7 +19,7 @@ export function ProductCard({ sku, onOpen }: { sku: Sku; onOpen?: (skuId: string
         onClick={() => onOpen?.(sku.sku_id)}
         className="relative w-full aspect-square rounded-[var(--r-md)] overflow-hidden bg-[var(--bg-soft)] text-left"
       >
-        <PlaceholderTile categoryId={sku.category_id} className="w-full h-full" />
+        <ProductImage image={sku.image} categoryId={sku.category_id} alt={sku.name} className="w-full h-full" />
         <span
           className={`absolute top-1.5 left-1.5 w-3.5 h-3.5 border-2 flex items-center justify-center ${
             sku.veg ? "border-[var(--im-green)]" : "border-[var(--im-red)]"

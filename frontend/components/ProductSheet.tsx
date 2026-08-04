@@ -3,7 +3,7 @@
 import { discountPct, getSkuById } from "@/lib/catalog";
 import { useCartStore, useUIStore } from "@/lib/store";
 import { BottomSheet } from "./BottomSheet";
-import { PlaceholderTile } from "./PlaceholderTile";
+import { ProductImage } from "./ProductImage";
 import { AddStepper } from "./AddStepper";
 import { TrustChip } from "./TrustChip";
 
@@ -22,7 +22,7 @@ export function ProductSheet() {
       {sku && (
         <div className="pb-8">
           <div className="w-full aspect-[4/3]">
-            <PlaceholderTile categoryId={sku.category_id} className="w-full h-full" />
+            <ProductImage image={sku.image} categoryId={sku.category_id} alt={sku.name} className="w-full h-full" />
           </div>
           <div className="px-5 pt-4">
             <div className="flex items-start justify-between gap-3">

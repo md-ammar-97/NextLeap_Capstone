@@ -3,7 +3,7 @@
 import { getSkuById } from "@/lib/catalog";
 import { useCartStore } from "@/lib/store";
 import { postEvents, type Suggestion } from "@/lib/api";
-import { PlaceholderTile } from "./PlaceholderTile";
+import { ProductImage } from "./ProductImage";
 import { AddStepper } from "./AddStepper";
 import { TrustChip } from "./TrustChip";
 import { ProtectedTrialBadge } from "./ProtectedTrialBadge";
@@ -45,7 +45,7 @@ export function SuggestionCard({
     <div className="w-[220px] shrink-0 snap-start rounded-[var(--r-md)] border border-[var(--line)] p-2.5 flex flex-col">
       <button type="button" onClick={onOpen} className="flex gap-2 text-left">
         <div className="w-14 h-14 rounded-[var(--r-sm)] overflow-hidden shrink-0">
-          <PlaceholderTile categoryId={sku.category_id} className="w-full h-full" />
+          <ProductImage image={sku.image} categoryId={sku.category_id} alt={sku.name} className="w-full h-full" />
         </div>
         <div className="min-w-0">
           <p className="text-[12px] font-semibold line-clamp-2 text-[var(--ink-900)]">{sku.name}</p>

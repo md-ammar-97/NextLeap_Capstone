@@ -2,7 +2,7 @@
 
 import { getSkuById } from "@/lib/catalog";
 import { useCartStore, useUIStore } from "@/lib/store";
-import { PlaceholderTile } from "./PlaceholderTile";
+import { ProductImage } from "./ProductImage";
 import { AddStepper } from "./AddStepper";
 
 export function CartLineItem({ skuId, qty }: { skuId: string; qty: number }) {
@@ -20,7 +20,7 @@ export function CartLineItem({ skuId, qty }: { skuId: string; qty: number }) {
         onClick={() => openProductSheet(sku.sku_id)}
         className="w-14 h-14 rounded-[var(--r-sm)] overflow-hidden shrink-0"
       >
-        <PlaceholderTile categoryId={sku.category_id} className="w-full h-full" />
+        <ProductImage image={sku.image} categoryId={sku.category_id} alt={sku.name} className="w-full h-full" />
       </button>
       <div className="min-w-0 flex-1">
         <p className="text-[13px] font-medium text-[var(--ink-900)] line-clamp-2">{sku.name}</p>

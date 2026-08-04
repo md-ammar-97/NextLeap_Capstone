@@ -111,10 +111,19 @@ Category-Expansion Rate.
 
 ## Known, accepted limitations
 
-- **Product images:** placeholder tiles (category-tinted + icon) for all SKUs
-  in this pass, per the hybrid-image decision in `docs/implementation_plan.md`
-  Pre-Flight. Real photography for the ~15 SKUs that actually surface in
-  copilot suggestions is a fast-follow, not a blocker.
+- **Product images:** all 120 SKUs now have a real, item-specific (non-
+  branded) photo, fetched via `scripts/fetch_images.py` from Pexels/Pixabay/
+  Unsplash's free APIs (round-robined across all three so no single
+  provider's rate limit is a bottleneck) and processed to ≤40KB WebP. Query
+  is the SKU's own name; relevance is automated matching, not hand-curated,
+  so quality varies a little per item — spot-checked across several
+  categories and it holds up well. Falls back to the category-tinted
+  placeholder tile for any SKU a re-run doesn't find a photo for (none did,
+  as of the last run — 120/120). Re-run with `scripts/venv/Scripts/python
+  scripts/fetch_images.py` then `python scripts/seed_catalog.py` if the
+  catalog changes. API keys live in `scripts/.env` (gitignored, not in this
+  repo) — get your own free keys at pexels.com/api, pixabay.com/api/docs,
+  and unsplash.com/developers to re-run this.
 - **SQLite event log (`backend/data/events.db`) is ephemeral** — Render's
   local filesystem doesn't persist across deploys/restarts unless a paid
   persistent disk is explicitly attached (not configured here). Acceptable
