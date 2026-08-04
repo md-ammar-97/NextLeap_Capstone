@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, type PanInfo } from "framer-motion";
+import { AnimatePresence, m, type PanInfo } from "framer-motion";
 import { type ReactNode } from "react";
 
 export function BottomSheet({
@@ -24,14 +24,14 @@ export function BottomSheet({
     <AnimatePresence>
       {open && (
         <>
-          <motion.div
+          <m.div
             className="fixed inset-0 bg-black/45 z-40"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
           />
-          <motion.div
+          <m.div
             className="fixed left-1/2 bottom-0 z-50 w-full max-w-[480px] -translate-x-1/2 bg-white rounded-t-[var(--r-lg)] overflow-hidden flex flex-col"
             style={{ maxHeight, boxShadow: "var(--shadow-sheet)" }}
             initial={{ y: "100%" }}
@@ -47,7 +47,7 @@ export function BottomSheet({
               <div className="w-9 h-1 rounded-full bg-[var(--line)]" />
             </div>
             <div className="overflow-y-auto">{children}</div>
-          </motion.div>
+          </m.div>
         </>
       )}
     </AnimatePresence>

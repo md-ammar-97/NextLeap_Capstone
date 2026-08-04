@@ -10,8 +10,19 @@ import { flushEventQueue, pingHealth } from "@/lib/api";
  * /events call (docs/edgecases.md #34). */
 export function HealthPing() {
   useEffect(() => {
-    pingHealth();
-    void flushEventQueue();
+    const run = () => {
+      pingHealth();
+      void flushEventQueue();
+    };
+    // Deferred off the critical rendering path (docs/update.md U5) —
+    // requestIdleCallback isn't in Safari <16.4, so fall back to a short
+    // timeout rather than skip the deferral there.
+    if (typeof window.requestIdleCallback === "function") {
+      const id = window.requestIdleCallback(run, { timeout: 3000 });
+      return () => window.cancelIdleCallback(id);
+    }
+    const id = window.setTimeout(run, 1000);
+    return () => window.clearTimeout(id);
   }, []);
   return null;
 }

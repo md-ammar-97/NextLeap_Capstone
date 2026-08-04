@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { Minus, Plus } from "lucide-react";
 
 export function AddStepper({
@@ -32,7 +32,7 @@ export function AddStepper({
   }
 
   return (
-    <motion.div
+    <m.div
       layout
       transition={{ type: "spring", stiffness: 400, damping: 32 }}
       className={`${h} flex items-center justify-center rounded-[var(--r-pill)] overflow-hidden select-none ${
@@ -43,16 +43,16 @@ export function AddStepper({
     >
       <AnimatePresence mode="wait" initial={false}>
         {qty === 0 ? (
-          <motion.button
+          <m.button
             key="add"
             type="button"
             onClick={onAdd}
             className={`font-bold ${text} tracking-wide`}
           >
             ADD
-          </motion.button>
+          </m.button>
         ) : (
-          <motion.div key="stepper" className="flex items-center gap-2.5 px-1">
+          <m.div key="stepper" className="flex items-center gap-2.5 px-1">
             <button
               type="button"
               aria-label="Decrease quantity"
@@ -70,9 +70,9 @@ export function AddStepper({
             >
               <Plus size={14} strokeWidth={3} />
             </button>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
-    </motion.div>
+    </m.div>
   );
 }

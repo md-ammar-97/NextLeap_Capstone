@@ -5,6 +5,7 @@ import { ProductSheet } from "@/components/ProductSheet";
 import { ProtectedTrialSheet } from "@/components/ProtectedTrialBadge";
 import { HealthPing } from "@/components/HealthPing";
 import { MetricsDrawer } from "@/components/MetricsDrawer";
+import { MotionProvider } from "@/components/MotionProvider";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-plus-jakarta",
@@ -23,10 +24,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html lang="en" className={`${plusJakarta.variable} h-full`}>
       <body className="min-h-full">
         <div className="app-frame">
-          {children}
-          <ProductSheet />
-          <ProtectedTrialSheet />
-          <MetricsDrawer />
+          <MotionProvider>
+            {children}
+            <ProductSheet />
+            <ProtectedTrialSheet />
+            <MetricsDrawer />
+          </MotionProvider>
           <HealthPing />
         </div>
       </body>

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/lib/store";
 import { computeTotals } from "@/lib/cart";
@@ -14,7 +14,7 @@ export function CartBar() {
   return (
     <AnimatePresence>
       {itemCount > 0 && (
-        <motion.div
+        <m.div
           initial={{ y: 80, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           exit={{ y: 80, opacity: 0 }}
@@ -31,7 +31,7 @@ export function CartBar() {
             </span>
             <span className="text-[13px] font-bold">View Cart →</span>
           </Link>
-        </motion.div>
+        </m.div>
       )}
     </AnimatePresence>
   );
