@@ -28,12 +28,21 @@ Usage: python scripts/test_baskets.py [backend_url]
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SHARED = os.path.join(ROOT, "shared")
 BACKEND_URL = sys.argv[1] if len(sys.argv) > 1 else "https://instamart-copilot-api.onrender.com"
+
+# Groq's free-tier per-minute token/request limits are easily exceeded by
+# firing ~25+ live-model calls back-to-back with no pacing (observed
+# directly: the first several calls of an unpaced run succeeded, then every
+# call for the rest of the run silently failed and fell through to 204) —
+# distinct from the shared daily quota noted in the README. A few seconds
+# between calls keeps a full run under the per-minute ceiling.
+CALL_DELAY_S = 3
 
 with open(os.path.join(SHARED, "priya.json"), encoding="utf-8") as f:
     PRIYA = json.load(f)
@@ -127,6 +136,8 @@ def call_copilot(sku_ids: list[str], local_hour: int, persona_key: str = "priya"
         return e.code, None
     except Exception as e:
         return -1, {"error": str(e)}
+    finally:
+        time.sleep(CALL_DELAY_S)
 
 
 def assert_valid_mission_response(status: int, data: dict | None) -> bool:

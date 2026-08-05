@@ -75,6 +75,64 @@ asserts mission-vs-silence) exists for a full regression pass but hasn't
 been run end-to-end against production yet — worth doing once the 70B
 quota has headroom again, and pasting the pass rate here.
 
+## Broadening mission coverage beyond meal-time (persona-asymmetric gate bug)
+
+Reported symptom: adding electronics items (a USB-C charger + extension
+board) produced no recommendation at all, even though completions like a
+charging cable or power strip are obviously relevant. Root cause was a
+hard gate in `backend/copilot.py`'s `get_copilot_response()`: the whole
+response was discarded unless at least one pick was in a category the
+shopper had never bought before (`MIN_NEW_CATEGORY`). `candidate_slice()`
+was already scoring the electronics completions correctly — the model's
+own answer was correct too — but for Ishaan (electronics already in his
+`history_category_ids`, see `shared/ishaan.json`) every one of those
+identical best picks read as "known category," so a fully correct
+response was silently thrown away. Priya, with no electronics history,
+got the same basket to work fine — the bug was invisible unless you
+happened to test with the persona whose history already covered the
+category being shopped for. Independently reproduced the same failure
+mode on a floor-cleaner-only cart ("monsoon cleaning", confidence 0.8,
+discarded).
+
+Fix: dropped the gate. A same-category-only completion (floor cleaner →
+toilet cleaner/detergent) is a legitimate, honest answer, not a degraded
+one — category-expansion is measured via `suggestion_added` events
+(`backend/events.py`), independent of this gate, so removing it doesn't
+weaken that metric. Also reworded `backend/prompts.py` away from a
+household/mealtime bias ("infer the household mission," "tonight's
+plan") toward a neutral mission framing spanning cleaning, skincare,
+pet-care, desk-setup, first-aid, and gifting — illustrative examples, not
+an exhaustive list the model was implicitly anchored to.
+
+This exact bug class could never have been caught by the existing
+`scripts/test_baskets.py`, since it only ever called the API as Priya —
+a single-persona suite structurally cannot catch a persona-*asymmetric*
+bug. Added `GATE_REGRESSION_PAIRS` (same basket, run against both
+personas, asserting both come back with a live mission) plus two pharma
+sub-cluster baseline baskets.
+
+**Verified live post-deploy**, via `POST /copilot/debug`: charger +
+extension board now correctly returns a "desk setup" mission with 3
+new-category picks (charging cable, extension board, phone stand) for
+**both** Priya and Ishaan — previously 204 for Ishaan specifically.
+Confirmed the same for micellar-water + face wash ("skincare routine"),
+dog food + pet treats ("dog care restock"), and balloons + candles
+("birthday party"), across both personas.
+
+A first full run of the updated `test_baskets.py` (27 cases, no pacing
+between calls) hit Groq's free-tier *per-minute* request/token ceiling
+partway through — distinct from the daily quota noted above — and
+everything after the first ~6 calls fell through to 204. Confirmed this
+was API-level, not a logic regression: retrying the exact same "failed"
+baskets individually via `/copilot/debug` seconds later returned valid,
+correct 200-worthy responses every time. Added `CALL_DELAY_S` pacing
+(3s) between calls in `test_baskets.py` to keep a full run under the
+per-minute ceiling; a paced run of the new gate-regression + pharma
+cases (10 calls) passed 7/10, and the 3 failures were themselves
+transient (`model_error_or_invalid_json`) and succeeded on immediate
+retry — worth a full paced 27-case run once there's more quota headroom,
+same caveat as above.
+
 ## Repo layout
 
 ```
