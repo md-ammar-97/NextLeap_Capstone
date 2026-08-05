@@ -107,7 +107,7 @@ class Suggestion(BaseModel):
 class CopilotResponse(BaseModel):
     mission: str
     confidence: float             # <0.6 → HTTP 204 instead
-    suggestions: list[Suggestion] # 1–3; ≥2 new-category
+    suggestions: list[Suggestion] # 1–3; no new-category minimum (relevance-only gate)
     latency_ms: int
     model: str
 ```

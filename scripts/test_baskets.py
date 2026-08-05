@@ -1,8 +1,9 @@
-"""Fix 6 (docs/improve.md): regression check for candidate-coverage fixes.
-Hard-codes ~15 baskets and asserts the copilot returns a mission (not
-silence) for the ones that should work, and silence for the ones that
-shouldn't. Run against production after each deploy; the pass rate is the
-honest answer to "how do you know it works?"
+"""Fix 6 (docs/improve.md) + gate-removal regression (see the plan that
+dropped MIN_NEW_CATEGORY in copilot.py): regression check for candidate-
+coverage fixes. Hard-codes baskets and asserts the copilot returns a
+mission (not silence) for the ones that should work, and silence for the
+ones that shouldn't. Run against production after each deploy; the pass
+rate is the honest answer to "how do you know it works?"
 
 Two baskets in the doc's original list reference products this catalog
 doesn't have (no plain bread/eggs SKU, no dedicated "festival sweets" SKU)
@@ -10,6 +11,17 @@ doesn't have (no plain bread/eggs SKU, no dedicated "festival sweets" SKU)
 same principle as the catalog enrichment gaps in Fix 3:
   "bread+eggs"      -> cheese slices + butter (same breakfast/sandwich intent)
   "festival sweets"  -> dry-fruit mix alone (tagged festival in Fix 3)
+
+GATE_REGRESSION_PAIRS below is the group that actually exercises the
+dropped hard gate: SHOULD_MISSION alone never could, since it only ever
+called as Priya (persona=householder) against her own history — a bug
+that's specifically an asymmetry between personas sharing an identical
+candidate set (same picks read as "new category" for one persona and
+"known category" for the other, and the old gate silently discarded the
+whole response whenever every pick was known-category) could never surface
+from a single-persona suite. Each basket here is run against both Priya
+(new category for her) and Ishaan (already in his history_category_ids —
+see shared/ishaan.json) and both calls must come back with a live mission.
 
 Usage: python scripts/test_baskets.py [backend_url]
 """
@@ -25,6 +37,13 @@ BACKEND_URL = sys.argv[1] if len(sys.argv) > 1 else "https://instamart-copilot-a
 
 with open(os.path.join(SHARED, "priya.json"), encoding="utf-8") as f:
     PRIYA = json.load(f)
+with open(os.path.join(SHARED, "ishaan.json"), encoding="utf-8") as f:
+    ISHAAN = json.load(f)
+
+PERSONAS = {
+    "priya": (PRIYA, "householder"),
+    "ishaan": (ISHAAN, "experimenter"),
+}
 
 # (label, sku_ids, local_hour)
 SHOULD_MISSION = [
@@ -54,13 +73,40 @@ SHOULD_SILENCE = [
     ("empty cart", [], 12),
 ]
 
+# (label, sku_ids, local_hour) — each run against BOTH personas below.
+# New-for-Priya / known-for-Ishaan (per shared/priya.json vs shared/ishaan.json
+# history_category_ids), so the identical candidate set reads as
+# [NEW CATEGORY] for one persona and [known category] for the other. The
+# old MIN_NEW_CATEGORY gate discarded the entire response whenever every
+# pick came back known-category — this is the case it could silently break.
+GATE_REGRESSION_PAIRS = [
+    ("charger + extension board (electronics)",
+     ["sku_charger_usbc_01", "sku_extension_board_01"], 14),
+    ("micellar water + face wash (beauty)",
+     ["sku_micellar_water_01", "sku_face_wash_01"], 20),
+    ("dog food + pet treats (pet)",
+     ["sku_dog_food_01", "sku_pet_treats_01"], 12),
+    ("balloons + candles (party_gifting)",
+     ["sku_balloons_01", "sku_candles_bday_01"], 16),
+]
 
-def call_copilot(sku_ids: list[str], local_hour: int) -> tuple[int, dict | None]:
+# Pharma has two complement sub-clusters that don't overlap (first-aid vs.
+# wellness/supplements). pharma is new-category for BOTH personas, so these
+# don't exercise the gate fix — they prove candidate_slice()'s coverage
+# guarantee still reaches both sub-clusters independently of each other.
+PHARMA_BASELINE = [
+    ("paracetamol + bandaid (first-aid)", ["sku_paracetamol_01", "sku_bandaid_01"], 12),
+    ("multivitamin + omega3 (wellness)", ["sku_multivitamin_01", "sku_omega3_01"], 9),
+]
+
+
+def call_copilot(sku_ids: list[str], local_hour: int, persona_key: str = "priya") -> tuple[int, dict | None]:
+    persona_data, framing = PERSONAS[persona_key]
     body = {
-        "session_id": "s_test_baskets",
-        "persona": "householder",
+        "session_id": f"s_test_baskets_{persona_key}",
+        "persona": framing,
         "cart": [{"sku_id": sid, "qty": 1} for sid in sku_ids],
-        "history_category_ids": PRIYA["history_category_ids"],
+        "history_category_ids": persona_data["history_category_ids"],
         "dismissed_sku_ids": [],
         "local_hour": local_hour,
     }
@@ -83,24 +129,64 @@ def call_copilot(sku_ids: list[str], local_hour: int) -> tuple[int, dict | None]
         return -1, {"error": str(e)}
 
 
+def assert_valid_mission_response(status: int, data: dict | None) -> bool:
+    """True if this is a well-formed, live mission response. Deliberately
+    does NOT check is_new_category counts — that assumption is exactly what
+    the MIN_NEW_CATEGORY gate removal drops. A same-category-only completion
+    is a legitimate pass here."""
+    if status != 200 or data is None:
+        return False
+    if not data.get("mission"):
+        return False
+    suggestions = data.get("suggestions", [])
+    if not (1 <= len(suggestions) <= 3):
+        return False
+    if data.get("confidence", 0) < 0.6:
+        return False
+    return True
+
+
 def main():
     results = []
 
     print(f"Backend: {BACKEND_URL}\n")
-    print("== Should produce a mission ==")
+    print("== Should produce a mission (Priya) ==")
     for label, sku_ids, hour in SHOULD_MISSION:
-        status, data = call_copilot(sku_ids, hour)
+        status, data = call_copilot(sku_ids, hour, "priya")
         passed = status == 200 and data is not None
         results.append(passed)
         mission = data.get("mission") if data else None
         print(f"  [{'PASS' if passed else 'FAIL'}] {label:45s} status={status} mission={mission!r}")
 
-    print("\n== Should stay silent ==")
+    print("\n== Should stay silent (Priya) ==")
     for label, sku_ids, hour in SHOULD_SILENCE:
-        status, data = call_copilot(sku_ids, hour)
+        status, data = call_copilot(sku_ids, hour, "priya")
         passed = status == 204
         results.append(passed)
         print(f"  [{'PASS' if passed else 'FAIL'}] {label:60s} status={status}")
+
+    print(
+        "\n== Gate regression: same basket, both personas "
+        "(new-category for Priya / known-category for Ishaan) =="
+    )
+    for label, sku_ids, hour in GATE_REGRESSION_PAIRS:
+        for persona_key in ("priya", "ishaan"):
+            status, data = call_copilot(sku_ids, hour, persona_key)
+            passed = assert_valid_mission_response(status, data)
+            results.append(passed)
+            mission = data.get("mission") if data else None
+            print(
+                f"  [{'PASS' if passed else 'FAIL'}] {label:40s} ({persona_key:6s}) "
+                f"status={status} mission={mission!r}"
+            )
+
+    print("\n== Pharma sub-cluster baseline (new for both personas) ==")
+    for label, sku_ids, hour in PHARMA_BASELINE:
+        status, data = call_copilot(sku_ids, hour, "priya")
+        passed = assert_valid_mission_response(status, data)
+        results.append(passed)
+        mission = data.get("mission") if data else None
+        print(f"  [{'PASS' if passed else 'FAIL'}] {label:45s} status={status} mission={mission!r}")
 
     total = len(results)
     passed_count = sum(results)

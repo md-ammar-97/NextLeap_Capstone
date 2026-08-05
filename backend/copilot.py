@@ -21,9 +21,6 @@ PRIMARY_TIMEOUT_S = 2.0
 FALLBACK_TIMEOUT_S = 1.0
 CONFIDENCE_FLOOR = 0.6
 MAX_SUGGESTIONS = 3
-MIN_NEW_CATEGORY = 1  # Fix 2 (docs/improve.md): was 2 — a forced-silent honest
-# single-new-category answer converts better than three forced picks; the
-# Part 3 metric counts new-category purchases, not suggestion count.
 WHY_MAX_WORDS = 12
 
 _SUPERLATIVE_RE = re.compile(r"\b(better|best|healthiest|healthier|superior|greatest)\b", re.I)
@@ -233,11 +230,16 @@ def get_copilot_response(req: CopilotRequest, debug: bool = False) -> tuple[Copi
         if len(suggestions) >= MAX_SUGGESTIONS:
             break
 
-    new_category_count = sum(1 for s in suggestions if s.is_new_category)
-    if not suggestions or new_category_count < MIN_NEW_CATEGORY:
-        meta["silence_reason"] = "insufficient_new_category_or_empty"
+    if not suggestions:
+        meta["silence_reason"] = "no_valid_suggestions"
         meta["final"] = None
         return None, meta
+
+    # No new-category-count gate by design: a same-category-only completion
+    # (floor cleaner -> toilet cleaner/detergent) is a legitimate, honest
+    # answer, not a degraded one. Category-expansion is measured via
+    # suggestion_added events (events.py), not gated on here.
+    meta["new_category_count"] = sum(1 for s in suggestions if s.is_new_category)
 
     response = CopilotResponse(
         mission=output.mission,
